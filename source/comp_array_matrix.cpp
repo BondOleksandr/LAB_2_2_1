@@ -3,6 +3,8 @@
 #include <vector>
 #include <cmath>
 #include "RNG.hpp"
+#include "all_matrix&vector.hpp"
+
 
 struct Element_Matrix{
     double val = 0;

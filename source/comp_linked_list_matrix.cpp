@@ -3,6 +3,7 @@
 #include <vector>
 #include <cmath>
 #include "RNG.hpp"
+#include "all_matrix&vector.hpp"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ private:
     int size;
 
 public:
-
+    
     ListMatrix(int inSize, double** matrix) : size(inSize), Head(nullptr) {//Turns 2d array, that represents matrix, into compressed linked list with same purpose
         Head = new Matrix_Node;
         Matrix_Listnp Crnt = NULL;

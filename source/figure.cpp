@@ -1,8 +1,6 @@
 #pragma once
 
-#include "triangle.hpp"
-#include "rectangle.hpp"
-#include "circle.hpp"
+#include <iostream>
 
 using namespace std;
 

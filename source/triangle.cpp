@@ -4,6 +4,7 @@
 #include <cmath>
 #include "point.hpp"
 #include "line.hpp"
+#include "figure.hpp"
 
 class Triangle : public Figure {
 private:

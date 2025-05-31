@@ -4,6 +4,7 @@
 #include <cmath>
 #include "point.hpp"
 #include "RNG.hpp"
+#include "figure.hpp"
 
 using namespace std;
 

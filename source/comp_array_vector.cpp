@@ -3,6 +3,7 @@
 #include <vector>
 #include <cmath>
 #include "RNG.hpp"
+#include "all_matrix&vector.hpp"
 
 using namespace std;
 

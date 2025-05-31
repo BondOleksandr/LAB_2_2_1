@@ -1,8 +1,15 @@
 #include <iostream>
-#include "point.hpp"
-#include "line.hpp"
-#include "figure.hpp"
-#include "all_matrix&vector.hpp"
+#include "source/point.hpp"
+#include "source/line.hpp"
+#include "source/all_matrix&vector.hpp"
+#include "source/figure.hpp"
+#include "source/triangle.hpp"
+#include "source/rectangle.hpp"
+#include "source/circle.hpp"
+#include "source/comp_array_matrix.hpp"
+#include "source/comp_array_vector.hpp"
+#include "source/comp_linked_list_matrix.hpp"
+#include "source/comp_linked_list_vector.hpp"
 
 using namespace std;
 
@@ -38,7 +45,7 @@ int main() {
             B.printInfo();
             C.printInfo();
             cout << (Point::isOnLine(A, B, C) ? "Points are on a common line\n" : "Points are not on a common line\n");
-            int x, y;
+            double x, y;
             x = dis(gen) * (rand() % 20);
             y = dis(gen) * (rand() % 20);
             cout << "shif cords are: ( " << x << ", " << y << " )\n";
