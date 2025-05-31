@@ -9,29 +9,29 @@ random_device rd;
 mt19937 gen(rd()); 
 uniform_real_distribution<> dis(0.0, 1.0);
 
-struct ELM {
+struct Element_Matrix{
     double val = 0;
     int row=-1;
     int clmn=-1;
 };
 
-struct ELV {
+struct Element_Vector {
     double val=0;
-    int idx=-1;
+    int index=-1;
 };
 
-typedef struct MNode {
+typedef struct Matrix_Node {
     double val;
     int row;
     int clmn;
-    MNode* next;
-}MListn, * MListnp;
+    Matrix_Node* next;
+}MListn, * Matrix_Listnp;
 
-typedef struct VNode {
+typedef struct Vector_Node {
     double val;
-    int idx;
-    VNode* next;
-}VListn, * VListnp;
+    int index;
+    Vector_Node* next;
+}VListn, * Vector_Listnp;
 
 class Point {
 private:
@@ -64,65 +64,65 @@ public:
         y += dy;
     }
 
-    static bool isOnLine(const Point& a, const Point& b, const Point& c) {
+    static bool isOnLine(const Point& a, const Point& b, const Point& c) {// Returns 1 if 3 points are on 1 line, else 0
         return ((c.getX() - a.getX()) * (b.getY() - a.getY())) == ((c.getY() - a.getY()) * (b.getX() - a.getX()));
     }
 };
 
 class Line {
 private:
-    Point a;
-    Point b;
+    Point BEG;
+    Point END;
 
 public:
-    Line(const Point& a, const Point& b) : a(a), b(b) {}
+    Line(const Point& a, const Point& b) : BEG(a), END(b) {}
 
-    Point getPointA() const { return a; }
-    Point getPointB() const { return b; }
+    Point getPointBEG() const { return BEG; }
+    Point getPointEND() const { return END; }
 
     void printInfo() const {
         cout << "Line defined by points: " << endl;
-        a.printInfo();
-        b.printInfo();
+        BEG.printInfo();
+        END.printInfo();
     }
 
     static Line GEN() {
-        Point A = A.GEN();
-        Point B = B.GEN();
-        Line C(A, B);
+        Point beg = beg.GEN();
+        Point end = end.GEN();
+        Line C(beg, end);
         return C;
     }
 
-    static bool isParalel(const Line& z, Line& u) {//
-        return(((z.b.getX() - z.a.getX()) / (z.b.getY() - z.a.getY())) == ((u.b.getX() - u.a.getX()) / (u.b.getY() - u.a.getY())));
+    static bool isParalel(const Line& z, Line& u) {//Returns 1, if lines are parallel, else 0
+        return(((z.END.getX() - z.BEG.getX()) / (z.END.getY() - z.BEG.getY())) == ((u.END.getX() - u.BEG.getX()) / (u.END.getY() - u.BEG.getY())));
     }
 
     static Point crossing(const Line& z, Line& u) {//point of the crossing of 2 lines
-        Point Cr(0, 0);
+        Point Crossing_point(0, 0);
         if (isParalel(z, u)) {
-            Cr.setX(14);
-            Cr.setY(88);
+            Crossing_point.setX(14);
+            Crossing_point.setY(88);
         }
         else {
-            double c1 = (z.b.getY() - z.a.getY()) / (z.b.getX() - z.a.getX());
-            double c2 = (u.b.getY() - u.a.getY()) / (u.b.getX() - u.a.getX());
-            Cr.setX((u.a.getY() - z.a.getY() + z.a.getX() * c1 - u.a.getX() * c2) / (c1 - c2));
-            Cr.setY(((Cr.getX() - z.a.getX()) * c1) + z.a.getY());
+            double c1 = (z.END.getY() - z.BEG.getY()) / (z.END.getX() - z.BEG.getX());
+            double c2 = (u.END.getY() - u.BEG.getY()) / (u.END.getX() - u.BEG.getX());
+            Crossing_point.setX((u.BEG.getY() - z.END.getY() + z.BEG.getX() * c1 - u.BEG.getX() * c2) / (c1 - c2));
+            Crossing_point.setY(((Crossing_point.getX() - z.BEG.getX()) * c1) + z.BEG.getY());
         }
-        return Cr;
+        return Crossing_point;
     }
 
-    static double angle(const Line& z, Line& u) {
-        double ax = z.b.getX() - z.a.getX();
-        double ay = z.b.getY() - z.a.getY();
-        double bx = u.b.getX() - u.a.getX();
-        double by = u.b.getY() - u.a.getY();
+    static double angle(const Line& z, Line& u) {//As angle between vectors, that are designated by the 2 points of the line
+        double ax = z.END.getX() - z.BEG.getX();
+        double ay = z.END.getY() - z.BEG.getY();
+        double bx = u.END.getX() - u.BEG.getX();
+        double by = u.END.getY() - u.BEG.getY();
         return acos((ax * bx + ay * by) / (sqrt(ax * ax + ay * ay) * sqrt(bx * bx + by * by)));
     }
 
-    static double LLength(const Line& z) {
-        double ax = z.b.getX() - z.a.getX();
-        double ay = z.b.getY() - z.a.getY();
+    static double LLength(const Line& z) {//Lenght of vector between 2 defining points
+        double ax = z.END.getX() - z.BEG.getX();
+        double ay = z.END.getY() - z.BEG.getY();
         return sqrt(ax * ax + ay * ay);
     }
 };
@@ -130,7 +130,7 @@ public:
 class Figure {
 public:
 
-    virtual void printInfo() const = 0;//polimorp 2 static
+    virtual void printInfo() const = 0;//polimorph 2 static
 
     virtual void shift(double dx, double dy) = 0;//polimorph 1 dynamic
 
@@ -175,17 +175,17 @@ public:
         c.shift(dx, dy);
     }
 
-    static double area(const Triangle& ABC) {
+    static double area(const Triangle& ABC) {//return area of the triangle
         Line AB(ABC.a, ABC.b);
         Line AC(ABC.a, ABC.c);
         double ABl = Line::LLength(AB);
         double ACl = Line::LLength(AC);
-        double sinn = sin(Line::angle(AB, AC));
-        return ABl * ACl * sinn / 2;
+        double sinus = sin(Line::angle(AB, AC));
+        return ABl * ACl * sinus / 2;
     }
 
-    static Point outcircle(const Triangle& ABC) {
-        Point O(0, 0);
+    static Point outcircle(const Triangle& ABC) {//returns center of the outer circle
+        Point Outercircle_point(0, 0);
         Point x = ABC.a;
         Point y = ABC.b;
         Point z = ABC.c;
@@ -200,19 +200,19 @@ public:
             (y.getX() * y.getX() + y.getY() * y.getY()) * (x.getX() - z.getX()) +
             (z.getX() * z.getX() + z.getY() * z.getY()) * (y.getX() - x.getX());
 
-        O.setX(Dx / D);
-        O.setY(Dy / D);
-        return O;
+        Outercircle_point.setX(Dx / D);
+        Outercircle_point.setY(Dy / D);
+        return Outercircle_point;
     }
 
-    static double perimeter(const Triangle& ABC) {
+    static double perimeter(const Triangle& ABC) {//triangle perimeter
         Line AB(ABC.a, ABC.b);
         Line AC(ABC.a, ABC.c);
         Line BC(ABC.c, ABC.b);
         return Line::LLength(AB) + Line::LLength(AC) + Line::LLength(BC);
     }
 
-    static bool issimilar(const Triangle& ABC, const Triangle& XYZ) {
+    static bool issimilar(const Triangle& ABC, const Triangle& XYZ) {//returns 1 if triangles are similar, returns 0 if not
         Line AB(ABC.a, ABC.b);
         Line AC(ABC.a, ABC.c);
         Line BC(ABC.c, ABC.b);
@@ -230,8 +230,8 @@ public:
         return false;
     }
 
-    static Point incircle(const Triangle& ABC) {
-        Point O(0, 0);
+    static Point incircle(const Triangle& ABC) {//returns center of the inner circle
+        Point Incircle_point(0, 0);
         Point x = ABC.a;
         Point y = ABC.b;
         Point z = ABC.c;
@@ -242,10 +242,10 @@ public:
         double ACl = Line::LLength(AC);
         double BCl = Line::LLength(BC);
 
-        O.setX((BCl * x.getX() + ACl * y.getX() + ABl * z.getX()) / (ABl + BCl + ACl));
-        O.setY((BCl * x.getY() + ACl * y.getY() + ABl * z.getY()) / (ABl + BCl + ACl));
+        Incircle_point.setX((BCl * x.getX() + ACl * y.getX() + ABl * z.getX()) / (ABl + BCl + ACl));
+        Incircle_point.setY((BCl * x.getY() + ACl * y.getY() + ABl * z.getY()) / (ABl + BCl + ACl));
 
-        return O;
+        return Incircle_point;
     }
 
 };
@@ -293,7 +293,7 @@ public:
         d.shift(dx, dy);
     }
     
-    static bool isconvex(const Rectangle& ABCD) {
+    static bool isconvex(const Rectangle& ABCD) {//returns 1, if rectangle is convex (opukliy), 0 if not
         Line AB(ABCD.a, ABCD.b);
         Line AD(ABCD.a, ABCD.d);
         Line BC(ABCD.b, ABCD.c);
@@ -303,7 +303,7 @@ public:
         return false;
     }
 
-    static double perimeter(const Rectangle& ABCD) {
+    static double perimeter(const Rectangle& ABCD) {//returns perimeter of the rectangle
         Line AB(ABCD.a, ABCD.b);
         Line AD(ABCD.a, ABCD.d);
         Line BC(ABCD.b, ABCD.c);
@@ -311,45 +311,45 @@ public:
         return Line::LLength(AB) + Line::LLength(AD) + Line::LLength(BC) + Line::LLength(CD);
     }
 
-    static double area(const Rectangle& ABCD) {
+    static double area(const Rectangle& ABCD) {//returns area of the rectangle (through diagonal and sin between them)
         Line AC(ABCD.a, ABCD.c);
         Line BD(ABCD.b, ABCD.d);
         double ACl = Line::LLength(AC);
         double BDl = Line::LLength(BD);
-        double sinn = sin(Line::angle(AC, BD));
-        return ACl * BDl * sinn;
+        double sinus = sin(Line::angle(AC, BD));
+        return ACl * BDl * sinus;
     }
 
 };
 
 class Circle : public Figure {
 private:
-    Point o;
+    Point center;
     double r;
 public:
-    Circle(const Point& o, const double r) : o(o), r(r) {}
+    Circle(const Point& cent, const double r) : center(center), r(r) {}
 
-    Point getO() const { return o; }
+    Point getO() const { return center; }
     double getR() const { return r; }
 
-    void setO(Point newO) { o = newO; }
+    void setO(Point newCenter) { center = newCenter; }
     void setR(double newR) { r = newR; }
 
     void shift(double dx, double dy) override {
-        o.shift(dx, dy);
+        center.shift(dx, dy);
     }
 
     void printInfo() const override {
         cout << "Circle with center: " << endl;
-        o.printInfo();
+        center.printInfo();
         cout << "and radius " << r << endl;
     }
 
-    static double area(const Circle& CL) {
+    static double area(const Circle& CL) {//area of circle
         return (CL.r) * (CL.r) * 3.141592;
     }
 
-    static double perimeter(const Circle& CL) {
+    static double perimeter(const Circle& CL) {//perimeter of circle
         return 2 * (CL.r) * 3.141592;
     }
 
@@ -362,7 +362,7 @@ public:
 
 };
 
-template <typename PrI>
+template <typename PrI>//out-method for figures
 void printFigureInfo(const PrI& figure) {
     static_assert(is_base_of<Figure, PrI>::value, "T must derive from Figure");
     figure.printInfo();
@@ -371,7 +371,7 @@ void printFigureInfo(const PrI& figure) {
 /////////////////////////////////////////////////////////////////MATRIX PART//////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-double** MATGEN(int size) {
+double** MATGEN(int size) {//generates double type matrix
     double** MAT = new double*[size];
     for (int i = 0; i < size; i++) {
         MAT[i] = new double[size];
@@ -387,7 +387,7 @@ double** MATGEN(int size) {
     return MAT;
 }
 
-double* VECGEN(int size) {
+double* VECGEN(int size) {//generates double type vector
     double* VEC = new double[size];
     for (int i = 0; i < size; i++) {
         if ((rand() % 100) > 80) {
@@ -407,14 +407,14 @@ public:
 class ListMatrix: public MatrixBase {
 private:
 
-    MListnp Head;
+    Matrix_Listnp Head;
     int size;
 
 public:
 
-    ListMatrix(int inSize, double** mtx) : size(inSize), Head(nullptr) {
-        Head = new MNode;
-        MListnp Crnt = NULL;
+    ListMatrix(int inSize, double** matrix) : size(inSize), Head(nullptr) {//Turns 2d array, that represents matrix, into compressed linked list with same purpose
+        Head = new Matrix_Node;
+        Matrix_Listnp Crnt = NULL;
         bool headmade = false;
         size = inSize;
         Head->val = 0;
@@ -424,9 +424,9 @@ public:
 
         for (int i = 0; i < inSize; i++) {
             for (int j = 0; j < inSize; j++) {
-                if (mtx[i][j]) {
+                if (matrix[i][j]) {
                     if (!headmade) {
-                        Head->val = mtx[i][j];
+                        Head->val = matrix[i][j];
                         Head->row = i;
                         Head->clmn = j;
                         Head->next = Crnt;
@@ -434,8 +434,8 @@ public:
                         Crnt = Head;
                     }
                     else {
-                        MListnp p = new MNode;
-                        p->val = mtx[i][j];
+                        Matrix_Listnp p = new Matrix_Node;
+                        p->val = matrix[i][j];
                         p->row = i;
                         p->clmn = j;
                         p->next = NULL;
@@ -448,7 +448,7 @@ public:
     }
 
     void print() override {
-        MListnp crnt = Head;
+        Matrix_Listnp crnt = Head;
         bool fin = false;
         for (int i = 0; i < size; i++) {
             cout << endl;
@@ -465,12 +465,12 @@ public:
         delete crnt;
     }
 
-    MListnp Valsearch( double check) {
+    Matrix_Listnp Valsearch( double check) {//search by value
         if (!check) {
             cout << "Does not work for 0" << endl;
             return NULL;
         }
-        MListnp crnt = Head;
+        Matrix_Listnp crnt = Head;
         while (crnt) {
             if (crnt->val == check)return crnt;
             else crnt = crnt->next;
@@ -478,16 +478,16 @@ public:
         return NULL;
     }
 
-    MListnp INDsearch(int ROW, int CLMN) {
+    Matrix_Listnp INDsearch(int ROW, int CLMN) {//search by index
         if (ROW >= size || CLMN >= size) {
             cout << "WRONG INPUT" << endl;
             return NULL;
         }
-        MListnp crnt = Head;
+        Matrix_Listnp crnt = Head;
         while (crnt) {
             if (crnt->row == ROW && crnt->clmn == CLMN)return crnt;
             if (crnt->row >= ROW && crnt->clmn >= CLMN) {
-                crnt = new MNode;
+                crnt = new Matrix_Node;
                 crnt->val = 0;
                 crnt->row = ROW;
                 crnt->clmn = CLMN;
@@ -495,68 +495,68 @@ public:
             }
             else crnt = crnt->next;
         }
-        crnt = new MNode;
+        crnt = new Matrix_Node;
         crnt->val = 0;
         crnt->row = ROW;
         crnt->clmn = CLMN;
         return crnt;
     }
     
-    static ListMatrix Summ(ListMatrix A, ListMatrix B) {
+    static ListMatrix Summ(ListMatrix A, ListMatrix B) {//sums matrixes, represented by comp. Linked list
         if (!A.Head->val)return B;
         if (!B.Head->val)return A;
-        ListMatrix C(0, 0);
-        MListnp Ccrnt = new MNode;
-        MListnp Acrnt = A.Head;
-        MListnp Bcrnt = B.Head;
-        C.Head = new MNode;
-        C.size = A.size;
+        ListMatrix RESULT(0, 0);
+        Matrix_Listnp Ccrnt = new Matrix_Node;
+        Matrix_Listnp Acrnt = A.Head;
+        Matrix_Listnp Bcrnt = B.Head;
+        RESULT.Head = new Matrix_Node;
+        RESULT.size = A.size;
 
         if (A.Head->row > B.Head->row) {
-            C.Head->val = B.Head->val;
-            C.Head->row = B.Head->row;
-            C.Head->clmn = B.Head->clmn;
-            C.Head->next = NULL;
+            RESULT.Head->val = B.Head->val;
+            RESULT.Head->row = B.Head->row;
+            RESULT.Head->clmn = B.Head->clmn;
+            RESULT.Head->next = NULL;
             Bcrnt = B.Head->next;
         }
         else {
             if (A.Head->row == B.Head->row) {
-                if (A.Head->clmn > B.Head->clmn) {
-                    C.Head->val = B.Head->val;
-                    C.Head->row = B.Head->row;
-                    C.Head->clmn = B.Head->clmn;
-                    C.Head->next = NULL;
+                if (RESULT.Head->clmn > B.Head->clmn) {
+                    RESULT.Head->val = B.Head->val;
+                    RESULT.Head->row = B.Head->row;
+                    RESULT.Head->clmn = B.Head->clmn;
+                    RESULT.Head->next = NULL;
                     Bcrnt = B.Head->next;
                 }
                 if (A.Head->clmn == B.Head->clmn) {
-                    C.Head->val = B.Head->val+A.Head->val;
-                    C.Head->row = B.Head->row;
-                    C.Head->clmn = B.Head->clmn;
-                    C.Head->next = NULL;
+                    RESULT.Head->val = B.Head->val+A.Head->val;
+                    RESULT.Head->row = B.Head->row;
+                    RESULT.Head->clmn = B.Head->clmn;
+                    RESULT.Head->next = NULL;
                     Bcrnt = B.Head->next;
                     Acrnt = A.Head->next;
                 }
                 else {
-                    C.Head->val = A.Head->val;
-                    C.Head->row = A.Head->row;
-                    C.Head->clmn = A.Head->clmn;
-                    C.Head->next = NULL;
+                    RESULT.Head->val = A.Head->val;
+                    RESULT.Head->row = A.Head->row;
+                    RESULT.Head->clmn = A.Head->clmn;
+                    RESULT.Head->next = NULL;
                     Acrnt = A.Head->next;
                 }
             }
             else
             {
-                C.Head->val = A.Head->val;
-                C.Head->row = A.Head->row;
-                C.Head->clmn = A.Head->clmn;
-                C.Head->next = NULL;
+                RESULT.Head->val = A.Head->val;
+                RESULT.Head->row = A.Head->row;
+                RESULT.Head->clmn = A.Head->clmn;
+                RESULT.Head->next = NULL;
                 Acrnt = A.Head->next;
             }
         }
-        Ccrnt = C.Head;
+        Ccrnt = RESULT.Head;
         if (Acrnt && Bcrnt) {
             while ((Acrnt && Bcrnt) && Acrnt->row < Bcrnt->row) {
-                MListnp p = new MNode;
+                Matrix_Listnp p = new Matrix_Node;
                 p->val = Acrnt->val;
                 p->row = Acrnt->row;
                 p->clmn = Acrnt->clmn;
@@ -567,7 +567,7 @@ public:
             }
 
             while ((Acrnt && Bcrnt) && Acrnt->row > Bcrnt->row) {
-                MListnp p = new MNode;
+                Matrix_Listnp p = new Matrix_Node;
                 p->val = Bcrnt->val;
                 p->row = Bcrnt->row;
                 p->clmn = Bcrnt->clmn;
@@ -579,7 +579,7 @@ public:
 
             while ((Acrnt && Bcrnt) && Acrnt->row == Bcrnt->row) {
                 while ((Acrnt && Bcrnt) && Acrnt->clmn > Bcrnt->clmn) {
-                    MListnp p = new MNode;
+                    Matrix_Listnp p = new Matrix_Node;
                     p->val = Bcrnt->val;
                     p->row = Bcrnt->row;
                     p->clmn = Bcrnt->clmn;
@@ -590,7 +590,7 @@ public:
                 }
 
                 while ((Acrnt && Bcrnt) && Acrnt->clmn < Bcrnt->clmn) {
-                    MListnp p = new MNode;
+                    Matrix_Listnp p = new Matrix_Node;
                     p->val = Acrnt->val;
                     p->row = Acrnt->row;
                     p->clmn = Acrnt->clmn;
@@ -601,7 +601,7 @@ public:
                 }
 
                 while ((Acrnt && Bcrnt) && Acrnt->clmn > Bcrnt->clmn) {
-                    MListnp p = new MNode;
+                    Matrix_Listnp p = new Matrix_Node;
                     p->val = Bcrnt->val;
                     p->row = Bcrnt->row;
                     p->clmn = Bcrnt->clmn;
@@ -612,7 +612,7 @@ public:
                 }
 
                 while ((Acrnt && Bcrnt) && Acrnt->clmn == Bcrnt->clmn) {
-                    MListnp p = new MNode;
+                    Matrix_Listnp p = new Matrix_Node;
                     p->val = Acrnt->val + Bcrnt->val;
                     p->row = Acrnt->row;
                     p->clmn = Acrnt->clmn;
@@ -626,7 +626,7 @@ public:
         }
 
         while (Acrnt) {
-            MListnp p = new MNode;
+            Matrix_Listnp p = new Matrix_Node;
             p->val = Acrnt->val;
             p->row = Acrnt->row;
             p->clmn = Acrnt->clmn;
@@ -636,7 +636,7 @@ public:
             Acrnt = Acrnt->next;
         }
         while (Bcrnt) {
-            MListnp p = new MNode;
+            Matrix_Listnp p = new Matrix_Node;
             p->val = Bcrnt->val;
             p->row = Bcrnt->row;
             p->clmn = Bcrnt->clmn;
@@ -645,12 +645,12 @@ public:
             Ccrnt = p;
             Bcrnt = Bcrnt->next;
         }
-        return C;
+        return RESULT;
     }
 
-    void xScalar(ListMatrix A, int x) {
+    void xScalar(ListMatrix A, int x) {//multiplies matrix by scalar
         ListMatrix B(0, 0);
-        MListnp crnt = A.Head;
+        Matrix_Listnp crnt = A.Head;
         while (crnt) {
             crnt->val *= x;
             crnt->next;
@@ -659,37 +659,37 @@ public:
 
 };
 
-class ListVector : public MatrixBase {
+class ListVector : public MatrixBase {//why inside matrix class?
 private:
 
-    VListnp Head;
+    Vector_Listnp Head;
     int size;
     bool row;
 
 public:
 
-    ListVector(int inSize, double* mtx, bool ROW) : size(inSize), Head(nullptr) {
-        Head = new VNode;
-        VListnp Crnt = Head;
+    ListVector(int inSize, double* vector, bool ROW) : size(inSize), Head(nullptr) {
+        Head = new Vector_Node;
+        Vector_Listnp Crnt = Head;
         size = inSize;
         Head->next = NULL;
-        Head->idx = 0;
+        Head->index = 0;
         Head->val = 0;
         row = ROW;
         bool headmade = false;
 
-        for (int i = 0; i < inSize; i++) {
-                if (mtx[i]) {
+        for (int i = 0; i < inSize; i++) {//turns 1d array representing vector into compressed linked list
+                if (vector[i]) {
                     if (!headmade) {
-                        Head->val = mtx[i];
-                        Head->idx = i;
+                        Head->val = vector[i];
+                        Head->index = i;
                         Head->next = Crnt;
                         headmade = true;
                         Crnt = Head;
                     }
                     else {
-                        VListnp p = new VNode;
-                        p->val = mtx[i];
+                        Vector_Listnp p = new Vector_Node;
+                        p->val = vector[i];
                         p->next = NULL;
                         Crnt->next = p;
                         Crnt = p;
@@ -699,10 +699,10 @@ public:
         }
 
     void print() override {
-        VListnp crnt = Head;
+        Vector_Listnp crnt = Head;
         bool fin = false;
         for (int i = 0; i < size; i++) {
-                if (i == crnt->idx && !fin) {
+                if (i == crnt->index && !fin) {
                     cout << crnt->val << " ";
                     if (crnt->next == NULL)fin = true;
                     else crnt = crnt->next;
@@ -714,12 +714,12 @@ public:
         delete crnt;
     }
 
-    VListnp Valsearch( double check) {
+    Vector_Listnp Valsearch( double check) {//value search
         if (!check) {
             cout << "Does not work for 0" << endl;
             return NULL;
         }
-        VListnp crnt = Head;
+        Vector_Listnp crnt = Head;
         while (crnt) {
             if (crnt->val == check)return crnt;
             else crnt = crnt->next;
@@ -727,15 +727,15 @@ public:
         return NULL;
     }
 
-    VListnp INDsearch( int IDX) {
-        VListnp crnt = Head;
+    Vector_Listnp INDsearch( int IDX) {//index search
+        Vector_Listnp crnt = Head;
         if (size <= IDX) {
             cout << "WRONG INPUT " << endl;
             return 0;
         }
         while (crnt) {
-            if (crnt->idx == IDX)return crnt;
-            if (crnt->idx > IDX)return NULL;
+            if (crnt->index == IDX)return crnt;
+            if (crnt->index > IDX)return NULL;
             else crnt = crnt->next;
         }
         cout << endl;
@@ -745,29 +745,29 @@ public:
 };
 
 
-class ArrMatrix : public MatrixBase {
+class ArrMatrix : public MatrixBase {//Matrix, but represented by 1d array of elements without 0??????
 private:
-    ELM* arr;
+    Element_Matrix* arr;
     int size;
     int ACTsize;
 public:
 
-    ArrMatrix(int inSize, double** mtx) : size(inSize) {
+    ArrMatrix(int inSize, double** matrix) : size(inSize) {//2d matrix - to 1d array without 0
         ACTsize = inSize;
         for (int i = 0; i < inSize; i++) {
             for (int j = 0; j < inSize; j++) {
-                if (mtx[i][j])size++;
+                if (matrix[i][j])size++;
             }
         }
 
-        arr = new ELM[size];
+        arr = new Element_Matrix[size];
 
         int crnt = 0;
 
         for (int i = 0; i < inSize; i++) {
             for (int j = 0; j < inSize; j++) {
-                if (mtx[i][j]) {
-                    arr[crnt].val = mtx[i][j];
+                if (matrix[i][j]) {
+                    arr[crnt].val = matrix[i][j];
                     arr[crnt].row = i;
                     arr[crnt].clmn = j;
                     crnt++;
@@ -790,56 +790,56 @@ public:
         }
     }
 
-    ELM ValSearch(double check) {
-        ELM k;
+    Element_Matrix ValSearch(double check) {//value search
+        Element_Matrix result;
         if (!check) {
             cout << "Does not work for 0" << endl;
-            return k;
+            return result;
         }
         for (int i = 0; i < size; i++) {
             if (arr[i].val == check)return arr[i];
         }
-        return k;
+        return result;
     }
 
-     ELM IndSearch(double ROW, double CLMN) {
-        ELM k;
+     Element_Matrix IndSearch(double ROW, double CLMN) {//index search
+        Element_Matrix result;
         if (ROW >= size || CLMN >= size) {
             cout << "WRONG INPUT" << endl;
-            return k;
+            return result;
         }
         for (int i = 0; i < size; i++) {
             if (arr[i].row == ROW && arr[i].clmn == CLMN)return arr[i];
         }
-        k.clmn = CLMN;
-        k.row = ROW;
-        k.val = 0;
-        return k;
+        result.clmn = CLMN;
+        result.row = ROW;
+        result.val = 0;
+        return result;
     }
 };
 
 class ArrVector : public MatrixBase {
 private:
-    ELV* arr;
-    bool row;
+    Element_Vector* arr;
+    bool row;//what is that?
     int size;
     int ACTsize;
 public:
 
-    ArrVector(int inSize, double* mtx, bool ROW) : size(inSize) {
+    ArrVector(int inSize, double* vector, bool ROW) : size(inSize) {//1d array to 1d array without 0s
         ACTsize = inSize;
         row = ROW;
         for (int i = 0; i < inSize; i++) {
-                if (mtx[i])size++;
+                if (vector[i])size++;
         }
 
-        arr = new ELV[size];
+        arr = new Element_Vector[size];
         int crnt = 0;
 
         for (int i = 0; i < inSize; i++) {
-                if (mtx[i]) {
-                    arr[crnt].val = mtx[i];
-                    arr[crnt].idx = i;
+                if (vector[i]) {
+                    arr[crnt].val = vector[i];
+                    arr[crnt].index = i;
                     crnt++;
                 }
         }
@@ -849,7 +849,7 @@ public:
         int crnt = 0;
         cout << endl;
         for (int i = 0; i < ACTsize; i++) {
-            if (arr[crnt].idx == i) {
+            if (arr[crnt].index == i) {
                 cout << arr[crnt].val << " ";
                 crnt++;
             }
@@ -857,18 +857,18 @@ public:
         }
     }
 
-    ELV ValSearch(double check) {
-        ELV k;
+    Element_Vector ValSearch(double check) {//value search
+        Element_Vector k;
         for (int i = 0; i < size; i++) {
             if (arr[i].val == check)return arr[i];
         }
         return k;
     }
 
-    ELV IndSearch(double IDX) {
-        ELV k;
+    Element_Vector IndSearch(double IDX) {//index search
+        Element_Vector k;
         for (int i = 0; i < size; i++) {
-            if (arr[i].idx == IDX)return arr[i];
+            if (arr[i].index == IDX)return arr[i];
         }
         return k;
     }
@@ -877,7 +877,7 @@ public:
 
 
 int main() {
-    int OPT = 1;
+    int OPT = 1;//option selector
 
     while (OPT) {
 
@@ -898,7 +898,7 @@ int main() {
             return 0;
             break;
 
-        case 1: {
+        case 1: {//Operations on points
             Point A(0, 0), B(0, 0), C(0, 0);
             A = A.GEN();
             B = B.GEN();
@@ -919,7 +919,7 @@ int main() {
             break;
         }
 
-        case 2: {
+        case 2: {//Operations on Lines
             Line line1(Point::GEN(), Point::GEN()), line2(Point::GEN(), Point::GEN());
             cout << "Line 1:\n";
             line1.printInfo();
@@ -939,7 +939,7 @@ int main() {
             break;
         }
 
-        case 3: {
+        case 3: {//Operations on triangles
             Triangle tri1(Point::GEN(), Point::GEN(), Point::GEN());
             Triangle tri2(Point::GEN(), Point::GEN(), Point::GEN());
             cout << "Triangle 1:\n";
@@ -976,7 +976,7 @@ int main() {
             break;
         }
 
-        case 4: {
+        case 4: {//Operations on rectangles
             Rectangle rect(Point::GEN(), Point::GEN(), Point::GEN(), Point::GEN());
             rect.printInfo();
             cout << "Rectangle perimeter: " << Rectangle::perimeter(rect) << endl;
@@ -996,7 +996,7 @@ int main() {
             break;
         }
 
-        case 5: {
+        case 5: {//Operations on circles
             Circle circle(Point::GEN(), dis(gen) * 10);
             circle.printInfo();
             cout << "Circle area: " << Circle::area(circle) << endl;
@@ -1012,7 +1012,7 @@ int main() {
             break;
         }
 
-        case 6: {
+        case 6: {//Operations on matrixes
             int size = rand() % 10 + 2;
             double** matA = MATGEN(size);
             double** matB = MATGEN(size);
@@ -1027,7 +1027,7 @@ int main() {
             cout << "\nSum of ListMatrix A and B:\n";
             ListMatrix::Summ(listMatrixA, listMatrixB).print();
             cout << "\n";
-            size_t listMatrixMemory = sizeof(ListMatrix) + sizeof(MNode) * size * size;
+            size_t listMatrixMemory = sizeof(ListMatrix) + sizeof(Matrix_Node) * size * size;
             cout << "\nMemory used by ListMatrix A: " << listMatrixMemory << " bytes\n";
             ArrMatrix arrMatrixA(size, matA);
             ArrMatrix arrMatrixB(size, matB);
@@ -1037,17 +1037,17 @@ int main() {
             cout << "\nArrMatrix B:\n";
             arrMatrixB.print();
             cout << "\n";
-            size_t arrMatrixMemory = sizeof(ArrMatrix) + sizeof(ELM) * size * size;
+            size_t arrMatrixMemory = sizeof(ArrMatrix) + sizeof(Element_Matrix) * size * size;
             cout << "\nMemory used by ArrMatrix A: " << arrMatrixMemory << " bytes\n";
             double searchVal = dis(gen) * 50;
             cout << "\nSearching for value " << searchVal << " in ListMatrix A:\n";
-            MListnp listResult = listMatrixA.Valsearch(searchVal);
+            Matrix_Listnp listResult = listMatrixA.Valsearch(searchVal);
             if (listResult)
                 cout << "Value found at (" << listResult->row << ", " << listResult->clmn << ")\n";
             else
                 cout << "Value not found.\n";
             cout << "\nSearching for value " << searchVal << " in ArrMatrix A:\n";
-            ELM arrResult = arrMatrixA.ValSearch(searchVal);
+            Element_Matrix arrResult = arrMatrixA.ValSearch(searchVal);
             if (arrResult.row >= 0)
                 cout << "Value found at (" << arrResult.row << ", " << arrResult.clmn << ")\n";
             else
@@ -1070,7 +1070,7 @@ int main() {
             break;
         }
 
-        case 7: {
+        case 7: {//Operations on vectors
             int size = rand() % 10 + 2;
             double* vecA = VECGEN(size);
             double* vecB = VECGEN(size);
@@ -1082,7 +1082,7 @@ int main() {
             cout << "\nListVector B:\n";
             listVectorB.print();
             cout << "\n";
-            size_t listVectorMemory = sizeof(ListVector) + sizeof(VNode) * size;
+            size_t listVectorMemory = sizeof(ListVector) + sizeof(Vector_Node) * size;
             cout << "\nMemory used by ListVector A: " << listVectorMemory << " bytes\n";
             ArrVector arrVectorA(size, vecA, true);
             ArrVector arrVectorB(size, vecB, true);
@@ -1092,19 +1092,19 @@ int main() {
             cout << "\nArrVector B:\n";
             arrVectorB.print();
             cout << "\n";
-            size_t arrVectorMemory = sizeof(ArrVector) + sizeof(ELV) * size;
+            size_t arrVectorMemory = sizeof(ArrVector) + sizeof(Element_Vector) * size;
             cout << "\nMemory used by ArrVector A: " << arrVectorMemory << " bytes\n";
             double searchVal = dis(gen) * 50;
             cout << "\nSearching for value " << searchVal << " in ListVector A:\n";
-            VListnp listVResult = listVectorA.Valsearch(searchVal);
+            Vector_Listnp listVResult = listVectorA.Valsearch(searchVal);
             if (listVResult)
-                cout << "Value found at index " << listVResult->idx << endl;
+                cout << "Value found at index " << listVResult->index << endl;
             else
                 cout << "Value not found.\n";
             cout << "\nSearching for value " << searchVal << " in ArrVector A:\n";
-            ELV arrVResult = arrVectorA.ValSearch(searchVal);
-            if (arrVResult.idx >= 0)
-                cout << "Value found at index " << arrVResult.idx << endl;
+            Element_Vector arrVResult = arrVectorA.ValSearch(searchVal);
+            if (arrVResult.index >= 0)
+                cout << "Value found at index " << arrVResult.index<< endl;
             else
                 cout << "Value not found.\n";
             int searchIdx = rand() % size;
@@ -1116,7 +1116,7 @@ int main() {
                 cout << "Element not found.\n";
             cout << "\nSearching for element at index " << searchIdx << " in ArrVector A:\n";
             arrVResult = arrVectorA.IndSearch(searchIdx);
-            if (arrVResult.idx >= 0)
+            if (arrVResult.index >= 0)
                 cout << "Element found with value: " << arrVResult.val << endl;
             else
                 cout << "Element not found.\n";
