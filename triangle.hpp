@@ -1,4 +1,7 @@
 #pragma once
+
+#include <iostream>
+#include <cmath>
 #include "point.hpp"
 #include "line.hpp"
 

@@ -1,8 +1,10 @@
 #pragma once
+
 #include "triangle.hpp"
 #include "rectangle.hpp"
 #include "circle.hpp"
 
+using namespace std;
 
 class Figure {
 public:
