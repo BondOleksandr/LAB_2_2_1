@@ -1,7 +1,3 @@
-#pragma once
+#include "all_matrix&vector.hpp"
 
-class MatrixBase {
-public:
-    virtual void print() = 0;
-    virtual ~MatrixBase() = default;
-};
+MatrixBase::~MatrixBase() = default;

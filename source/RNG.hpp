@@ -1,36 +1,9 @@
 #pragma once
-#include <cmath>
 #include <random>
 
-using namespace std;
+extern std::random_device rd;
+extern std::mt19937 gen;
+extern std::uniform_real_distribution<> dis;
 
-random_device rd;  
-mt19937 gen(rd()); 
-uniform_real_distribution<> dis(0.0, 1.0);
-
-double** MATGEN(int size) {//generates double type matrix
-    double** MAT = new double*[size];
-    for (int i = 0; i < size; i++) {
-        MAT[i] = new double[size];
-    }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            if ((rand() % 100) > 80) {
-                MAT[i][j] = (dis(gen) * (rand() % 100));
-            }
-            else MAT[i][j] = 0;
-        }
-    }
-    return MAT;
-}
-
-double* VECGEN(int size) {//generates double type vector
-    double* VEC = new double[size];
-    for (int i = 0; i < size; i++) {
-        if ((rand() % 100) > 80) {
-            VEC[i] = (dis(gen) * (rand() % 100));
-        }
-        else VEC[i] = 0;
-    }
-    return VEC;
-}
+double** MATGEN(int size);
+double* VECGEN(int size);

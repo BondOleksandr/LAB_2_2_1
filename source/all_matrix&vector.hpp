@@ -3,5 +3,5 @@
 class MatrixBase {
 public:
     virtual void print() = 0;
-    virtual ~MatrixBase() = default;
+    virtual ~MatrixBase(); // оголошення деструктора
 };

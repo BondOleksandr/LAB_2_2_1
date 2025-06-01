@@ -1,42 +1,40 @@
-#pragma once
-#include <iostream>
-#include <cmath>
-#include "RNG.hpp"
+#include "point.hpp"
 
-using namespace std;
+Point::Point(double x, double y) : x(x), y(y) {}
 
-class Point {
-private:
-    double x;
-    double y;
+double Point::getX() const {
+    return x;
+}
 
-public:
+double Point::getY() const {
+    return y;
+}
 
-    Point(double x, double y) : x(x), y(y) {}
+void Point::setX(double newX) {
+    x = newX;
+}
 
-    double getX() const { return x; }
-    double getY() const { return y; }
+void Point::setY(double newY) {
+    y = newY;
+}
 
-    void setX(double newX) { x = newX; }
-    void setY(double newY) { y = newY; }
+void Point::printInfo() const {
+    cout << "Point (" << x << ", " << y << ")" << endl;
+}
 
-    void printInfo() const {
-        cout << "Point (" << x << ", " << y << ")" << endl;
-    }
+Point Point::GEN() {
+    Point A(0, 0);
+    A.setX(dis(gen) * (rand() % 100));
+    A.setY(dis(gen) * (rand() % 100));
+    return A;
+}
 
-    static Point GEN() {
-        Point A(0,0);
-        A.setX(dis(gen)*(rand()%100));
-        A.setY(dis(gen) * (rand() % 100));
-        return A;
-    }
+void Point::shift(double dx, double dy) {
+    x += dx;
+    y += dy;
+}
 
-    void shift(double dx, double dy) {
-        x += dx;
-        y += dy;
-    }
-
-    static bool isOnLine(const Point& a, const Point& b, const Point& c) {// Returns 1 if 3 points are on 1 line, else 0
-        return ((c.getX() - a.getX()) * (b.getY() - a.getY())) == ((c.getY() - a.getY()) * (b.getX() - a.getX()));
-    }
-};
+bool Point::isOnLine(const Point& a, const Point& b, const Point& c) {
+    return ((c.getX() - a.getX()) * (b.getY() - a.getY())) ==
+           ((c.getY() - a.getY()) * (b.getX() - a.getX()));
+}

@@ -1,49 +1,36 @@
-#pragma once
-
+#include "circle.hpp"
+#include "RNG.hpp"
 #include <iostream>
 #include <cmath>
-#include "point.hpp"
-#include "RNG.hpp"
-#include "figure.hpp"
 
-using namespace std;
+Circle::Circle(const Point& cent, double r) : center(cent), r(r) {}
 
-class Circle : public Figure {
-private:
-    Point center;
-    double r;
-public:
-    Circle(const Point& cent, const double r) : center(center), r(r) {}
+Point Circle::getO() const { return center; }
+double Circle::getR() const { return r; }
 
-    Point getO() const { return center; }
-    double getR() const { return r; }
+void Circle::setO(Point newCenter) { center = newCenter; }
+void Circle::setR(double newR) { r = newR; }
 
-    void setO(Point newCenter) { center = newCenter; }
-    void setR(double newR) { r = newR; }
+void Circle::shift(double dx, double dy) {
+    center.shift(dx, dy);
+}
 
-    void shift(double dx, double dy) override {
-        center.shift(dx, dy);
-    }
+void Circle::printInfo() const {
+    std::cout << "Circle with center: " << std::endl;
+    center.printInfo();
+    std::cout << "and radius " << r << std::endl;
+}
 
-    void printInfo() const override {
-        cout << "Circle with center: " << endl;
-        center.printInfo();
-        cout << "and radius " << r << endl;
-    }
+double Circle::area(const Circle& CL) {
+    return CL.r * CL.r * 3.141592;
+}
 
-    static double area(const Circle& CL) {//area of circle
-        return (CL.r) * (CL.r) * 3.141592;
-    }
+double Circle::perimeter(const Circle& CL) {
+    return 2 * CL.r * 3.141592;
+}
 
-    static double perimeter(const Circle& CL) {//perimeter of circle
-        return 2 * (CL.r) * 3.141592;
-    }
-
-    static Circle GEN() {//changed var names here
-        Point CENTR = CENTR.GEN();
-        double rad = (dis(gen) * (rand() % 100));
-        Circle Circ(CENTR, rad);
-        return Circ;
-    }
-
-};
+Circle Circle::GEN() {
+    Point CENTR = Point::GEN();
+    double rad = dis(gen) * (rand() % 100);
+    return Circle(CENTR, rad);
+}

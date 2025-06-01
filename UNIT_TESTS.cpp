@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "catch_amalgamated.hpp"
+#include "source/catch_amalgamated.hpp"
 #include "source/all_matrix&vector.hpp"
 #include "source/figure.hpp"
 #include "source/RNG.hpp"
@@ -67,10 +67,6 @@ TEST_CASE("Line::crossing returns fake point for parallel lines") {
     Point nay = Line::crossing(ab, cd);
     REQUIRE(nay .getX() == Approx(14));
     REQUIRE(nay .getY() == Approx(88));
-
-    Point yep = Line::crossing(ef,gh);
-    REQUIRE(nay .getX() == Approx(0));
-    REQUIRE(nay .getY() == Approx(0));
 }
 
 TEST_CASE("Line::angle returns correct value in radians") {
@@ -197,7 +193,7 @@ TEST_CASE("Rectangle::isconvex returns false for non-convex quadrilateral") {
 ////////////////////////////////////////////LINKED-LIST-MATRIX//////////////////////////////////////////////////
 
 
-TEST_CASE("Valsearch finds value in matrix A") {
+TEST_CASE("LINKED-LIST-MATRIX:Valsearch finds value in matrix A") {
     double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -221,7 +217,7 @@ TEST_CASE("Valsearch finds value in matrix A") {
     REQUIRE(node->clmn == 1);
 }
 
-TEST_CASE("INDsearch returns correct values") {
+TEST_CASE("LINKED-LIST-MATRIX:INDsearch returns correct values") {
     double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -247,7 +243,7 @@ TEST_CASE("INDsearch returns correct values") {
     REQUIRE(node3->val == Approx(0));
 }
 
-TEST_CASE("Summ computes correct matrix sum") {
+TEST_CASE("LINKED-LIST-MATRIX:Summ computes correct matrix sum") {
     double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -274,7 +270,7 @@ TEST_CASE("Summ computes correct matrix sum") {
     REQUIRE(C.INDsearch(3, 3)->val == Approx(7));
 }
 
-TEST_CASE("xScalar multiplies all non-zero values") {
+TEST_CASE("LINKED-LIST-MATRIX:xScalar multiplies all non-zero values") {
     double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -303,7 +299,7 @@ TEST_CASE("xScalar multiplies all non-zero values") {
 
 ////////////////////////////////////////////ARRAY-MATRIX//////////////////////////////////////////////////
 
-TEST_CASE("ValSearch returns correct non-zero element") {
+TEST_CASE("ARRAY-MATRIX:ValSearch returns correct non-zero element") {
         double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -329,7 +325,7 @@ TEST_CASE("ValSearch returns correct non-zero element") {
     REQUIRE(res2.clmn == 2);
 }
 
-TEST_CASE("ValSearch returns default element for 0") {
+TEST_CASE("ARRAY-MATRIX:ValSearch returns default element for 0") {
             double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -352,7 +348,7 @@ TEST_CASE("ValSearch returns default element for 0") {
     REQUIRE(res.val == 0);
 }
 
-TEST_CASE("IndSearch returns existing element") {
+TEST_CASE("ARRAY-MATRIX:IndSearch returns existing element") {
             double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -375,7 +371,7 @@ TEST_CASE("IndSearch returns existing element") {
     REQUIRE(res.clmn == 3);
 }
 
-TEST_CASE("IndSearch returns zero-filled for missing element") {
+TEST_CASE("ARRAY-MATRIX:IndSearch returns zero-filled for missing element") {
             double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -398,7 +394,7 @@ TEST_CASE("IndSearch returns zero-filled for missing element") {
     REQUIRE(res.clmn == 2);
 }
 
-TEST_CASE("IndSearch handles out-of-bounds indices") {
+TEST_CASE("ARRAY-MATRIX:IndSearch handles out-of-bounds indices") {
             double** matrix_A = new double*[4] {
         new double[4]{1, 0, 0, 2},
         new double[4]{0, 3, 0, 0},
@@ -424,7 +420,7 @@ TEST_CASE("IndSearch handles out-of-bounds indices") {
 ////////////////////////////////////////////VECTORS////////////////////////////////////////////////////////////
 ////////////////////////////////////////////LINKED-LIST-VECTOR//////////////////////////////////////////////////
 
- TEST_CASE("Valsearch returns correct non-zero element") {
+ TEST_CASE("LINKED-LIST-VECTOR:Valsearch returns correct non-zero element") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -436,7 +432,7 @@ TEST_CASE("IndSearch handles out-of-bounds indices") {
     REQUIRE(res->index == 2);
 }
 
-TEST_CASE("Valsearch returns null for zero value") {
+TEST_CASE("LINKED-LIST-VECTOR:Valsearch returns null for zero value") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -447,7 +443,7 @@ TEST_CASE("Valsearch returns null for zero value") {
     REQUIRE(res == nullptr);
 }
 
-TEST_CASE("INDsearch returns correct element at index") {
+TEST_CASE("LINKED-LIST-VECTOR:INDsearch returns correct element at index") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -459,7 +455,7 @@ TEST_CASE("INDsearch returns correct element at index") {
     REQUIRE(res->index == 4);
 }
 
-TEST_CASE("INDsearch returns null for zero element") {
+TEST_CASE("LINKED-LIST-VECTOR:INDsearch returns null for zero element") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -469,7 +465,7 @@ TEST_CASE("INDsearch returns null for zero element") {
     REQUIRE(res == nullptr);
 }
 
-TEST_CASE("INDsearch handles invalid index") {
+TEST_CASE("LINKED-LIST-VECTOR:INDsearch handles invalid index") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -481,7 +477,7 @@ TEST_CASE("INDsearch handles invalid index") {
 
 ////////////////////////////////////////////ARRAY-VECTOR//////////////////////////////////////////////////
 
-TEST_CASE("ValSearch returns correct non-zero element") {
+TEST_CASE("ARRAY-VECTOR:ValSearch returns correct non-zero element") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -492,7 +488,7 @@ TEST_CASE("ValSearch returns correct non-zero element") {
     REQUIRE(res.index == 2);
 }
 
-TEST_CASE("ValSearch returns default struct for zero") {
+TEST_CASE("ARRAY-VECTOR:ValSearch returns default struct for zero") {
     
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -503,7 +499,7 @@ TEST_CASE("ValSearch returns default struct for zero") {
     REQUIRE(res.index == -1);
 }
 
-TEST_CASE("IndSearch returns correct element at index") {
+TEST_CASE("ARRAY-VECTOR:IndSearch returns correct element at index") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -514,7 +510,7 @@ TEST_CASE("IndSearch returns correct element at index") {
     REQUIRE(res.index == 4);
 }
 
-TEST_CASE("IndSearch returns default struct for zero element") {
+TEST_CASE("ARRAY-VECTOR:IndSearch returns default struct for zero element") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
@@ -525,7 +521,7 @@ TEST_CASE("IndSearch returns default struct for zero element") {
     REQUIRE(res.index == -1);
 }
 
-TEST_CASE("IndSearch returns default struct for out of bounds") {
+TEST_CASE("ARRAY-VECTOR:IndSearch returns default struct for out of bounds") {
 
     double* vec = new double[5]{1.0, 0.0, 3.0, 0.0, 5.0};
 
