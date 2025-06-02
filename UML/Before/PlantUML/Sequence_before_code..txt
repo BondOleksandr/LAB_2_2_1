@@ -1,0 +1,142 @@
+
+@startuml FullMainSequence_Updated
+
+actor User
+
+User -> Main : start()
+activate Main
+
+Main -> User : displayMenu()
+User -> Main : selectOption(option)
+
+alt option == 0
+    Main -> Main : exit()
+    deactivate Main
+end
+
+alt option == 1
+    Main -> Point : GEN()
+    Point --> User : printInfo()
+    Main -> Point : GEN()
+    Point --> User : printInfo()
+    Main -> Point : GEN()
+    Point --> User : printInfo()
+    Main -> Point : isOnLine()
+    Point --> User : isOnLine result
+    Main -> Point : shift()
+    Main -> Point : printInfo()
+    Point --> User : printInfo()
+end
+
+alt option == 2
+    Main -> Point : GEN() * 2
+    Main -> Line : isParalel()
+    Line --> User : isParalel result
+    Main -> Line : angle()
+    Line --> User : angle value
+    Main -> Line : crossing()
+    Line --> User : intersection point or null
+end
+
+alt option == 3
+    Main -> Point : GEN() * 3
+    Main -> Triangle : constructor
+    Main -> Triangle : printInfo()
+    Triangle --> User : triangle info
+    Main -> Triangle : area()
+    Triangle --> User : area
+    Main -> Triangle : perimeter()
+    Triangle --> User : perimeter
+    Main -> Triangle : printInfo()
+    Triangle --> User : triangle info
+    Main -> Triangle : area()
+    Triangle --> User : area
+    Main -> Triangle : perimeter()
+    Triangle --> User : perimeter
+    Main -> Triangle : outcircle()
+    Triangle --> User : circumcenter
+    Main -> Triangle : incircle()
+    Triangle --> User : incircle
+    Main -> Triangle : issimilar()
+    Triangle --> User : similarity result
+    Main -> Triangle : shift()
+    Main -> Triangle : printInfo()
+    Triangle --> User : shifted triangle info
+end
+
+alt option == 4
+    Main -> Point : GEN() * 4
+    Main -> Rectangle : constructor
+    Main -> Rectangle : printInfo()
+    Rectangle --> User : rectangle info
+    Main -> Rectangle : perimeter()
+    Rectangle --> User : perimeter
+    Main -> Rectangle : isconvex()
+    Rectangle --> User : convex status
+    Main -> Rectangle : area()
+    Rectangle --> User : area
+    Main -> Rectangle : shift()
+    Main -> Rectangle : printInfo()
+    Rectangle --> User : shifted rectangle
+end
+
+alt option == 5
+    Main -> Point : GEN()
+    Main -> Circle : constructor
+    Main -> Circle : printInfo()
+    Circle --> User : circle info
+    Main -> Circle : area()
+    Circle --> User : area
+    Main -> Circle : perimeter()
+    Circle --> User : perimeter
+    Main -> Circle : shift()
+    Main -> Circle : printInfo()
+    Circle --> User : shifted circle
+end
+
+alt option == 6
+    Main -> Main : MATGEN() * 2
+    Main -> ListMatrix : constructor
+    Main -> ListMatrix : print()
+    ListMatrix --> User : matrix A
+    Main -> ListMatrix : constructor
+    Main -> ListMatrix : print()
+    ListMatrix --> User : matrix B
+    Main -> ListMatrix : Summ()
+    ListMatrix --> User : matrix sum
+    Main -> ArrMatrix : constructor * 2
+    Main -> ArrMatrix : print() * 2
+    ArrMatrix --> User : arr matrix A, B
+    Main -> ListMatrix : Valsearch()
+    ListMatrix --> User : found value or not
+    Main -> ArrMatrix : ValSearch()
+    ArrMatrix --> User : found value or not
+    Main -> ListMatrix : INDsearch()
+    ListMatrix --> User : index value or not
+    Main -> ArrMatrix : IndSearch()
+    ArrMatrix --> User : index value or not
+end
+
+alt option == 7
+    Main -> Main : VECGEN() * 2
+    Main -> ListVector : constructor
+    Main -> ListVector : print()
+    ListVector --> User : vector A
+    Main -> ListVector : constructor
+    Main -> ListVector : print()
+    ListVector --> User : vector B
+    Main -> ArrVector : constructor * 2
+    Main -> ArrVector : print() * 2
+    ArrVector --> User : arr vectors
+    Main -> ListVector : Valsearch()
+    ListVector --> User : value found or not
+    Main -> ArrVector : ValSearch()
+    ArrVector --> User : value found or not
+    Main -> ListVector : INDsearch()
+    ListVector --> User : element by index or not
+    Main -> ArrVector : IndSearch()
+    ArrVector --> User : element by index or not
+end
+
+deactivate Main
+@enduml

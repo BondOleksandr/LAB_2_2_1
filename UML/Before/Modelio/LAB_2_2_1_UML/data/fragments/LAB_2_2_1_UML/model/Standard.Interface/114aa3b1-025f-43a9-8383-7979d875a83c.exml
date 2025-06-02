@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Matrix_Node" version="4">
+  <OBJECT>
+    <ID name="Matrix_Node" mc="Standard.Interface" uid="114aa3b1-025f-43a9-8383-7979d875a83c"/>
+    <PID name="lab_2_2_1_uml" mc="Standard.Package" uid="e6269a20-e85d-4bbe-a1e1-1cea8761dda3"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">true</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Matrix_Node]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="lab_2_2_1_uml" version="4">
+  <OBJECT>
+    <ID name="lab_2_2_1_uml" mc="Standard.Package" uid="e6269a20-e85d-4bbe-a1e1-1cea8761dda3"/>
+    <PID name="LAB_2_2_1_UML" mc="Standard.Project" uid="8d3b8659-eddf-47e3-976d-deba2c90e0f0"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[lab_2_2_1_uml]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Activity" mc="Standard.Activity" uid="31d5241a-bab1-403e-8f35-993db2b7517d"/>
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="3d953d29-c44c-49f5-9229-53b7bb4bf913"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Point" mc="Standard.Class" uid="36fd3e74-0a7f-45e6-8298-31e9f95c6f3e"/>
+        <COMPID name="Line" mc="Standard.Class" uid="3474a296-4c11-4226-baab-4765c812336b"/>
+        <COMPID name="Triangle" mc="Standard.Class" uid="471d670f-60b4-4528-8260-8bc8f93b7ffa"/>
+        <COMPID name="Rectangle" mc="Standard.Class" uid="76a33136-b7ae-47f7-b55d-d99b44da24a3"/>
+        <COMPID name="Circle" mc="Standard.Class" uid="8d449579-c168-4610-b7ff-dc2d248d2ed4"/>
+        <COMPID name="Figure" mc="Standard.Class" uid="0c806c24-87af-42ff-8e91-6a0d5e3f3dd5"/>
+        <COMPID name="Matrix_Node" mc="Standard.Interface" uid="114aa3b1-025f-43a9-8383-7979d875a83c"/>
+        <COMPID name="ListMatrix" mc="Standard.Class" uid="dcf440ed-d5c2-483d-9266-774a37c72d17"/>
+        <COMPID name="Vector_Node" mc="Standard.Interface" uid="34751c21-44e2-427f-9f08-18a980f38759"/>
+        <COMPID name="ListVector" mc="Standard.Class" uid="c347f127-1c8f-4c93-bf28-c1654115cbe2"/>
+        <COMPID name="ArrMatrix" mc="Standard.Class" uid="e78cdb1c-2aa1-45d4-8522-18658be54873"/>
+        <COMPID name="Element_Matrix" mc="Standard.Interface" uid="0d77211a-a9bf-440b-bda9-0e350c4008ca"/>
+        <COMPID name="ArrVector" mc="Standard.Class" uid="da9e87dd-12d1-46e8-ba0f-5710296f81d2"/>
+        <COMPID name="Element_Vector" mc="Standard.Interface" uid="90d7e722-c798-4cbb-9c5a-206aa8c44fd1"/>
+        <COMPID name="MatrixBase" mc="Standard.Class" uid="3a1cc2c7-72e0-4323-9528-30fcc8aca3c4"/>
+        <COMPID name="USER" mc="Standard.Actor" uid="e7ec1f50-86c1-419f-ba5a-54803a3b8660"/>
+        <COMPID name="Case &quot;1&quot; Point operations" mc="Standard.UseCase" uid="387eeaf9-c9fb-42d4-a418-f01afc402cf1"/>
+        <COMPID name="Case &quot;2&quot; Line opearations" mc="Standard.UseCase" uid="cc154f9e-33d1-400c-865f-afc628607782"/>
+        <COMPID name="Case &quot;3&quot; Triangle operations" mc="Standard.UseCase" uid="3f52c903-b18d-44cb-a96e-0e43aabc676c"/>
+        <COMPID name="Case &quot;4&quot; Rectangle operations" mc="Standard.UseCase" uid="fb4511a0-ad38-415b-9724-672c6d1c723c"/>
+        <COMPID name="Case &quot;5&quot; circle operations" mc="Standard.UseCase" uid="a9aed9b4-7cdf-416c-84d8-0640a9abb020"/>
+        <COMPID name="Case &quot;6&quot; Matrix operations" mc="Standard.UseCase" uid="794f80c0-ca3c-4a58-9ace-c4fcfca0d38f"/>
+        <COMPID name="Case &quot;7&quot; Matrix operations" mc="Standard.UseCase" uid="e5da8f66-6205-4fec-909e-061e89e674ba"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="lab_2_2_1_uml Class diagram" mc="Standard.ClassDiagram" uid="3882f61d-1264-4d13-853d-6963a371256a"/>
+        <COMPID name="lab_2_2_1_uml Use Case diagram" mc="Standard.UseCaseDiagram" uid="3ec99d9a-ebfd-46dc-b5e2-86724a893cb3"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,1 @@
+Реалізовано Сlass, Use_case, Activity, Component, Deployment, Sequence, State діаграми. Сlass, Use_case, Activity реалізовані повністю вручну мною в Modelio. Component, Deployment, Sequence, State реалізовані в PlantUML(на основі свого коду будує діаграму). Код для PlantUML частково написаний ChatGPT на основі мого сурс коду (.cpp).

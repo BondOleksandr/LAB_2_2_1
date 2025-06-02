@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="LAB_2_2_1_UML" version="4">
+  <OBJECT>
+    <ID name="LAB_2_2_1_UML" mc="Infrastructure.DiagramSet" uid="5689b159-ae01-4bc9-b488-306c149fcd2a"/>
+    <PID name="LAB_2_2_1_UML" mc="Standard.Project" uid="8d3b8659-eddf-47e3-976d-deba2c90e0f0"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[LAB_2_2_1_UML]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
