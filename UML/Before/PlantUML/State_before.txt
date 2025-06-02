@@ -1,0 +1,23 @@
+@startuml
+[*] --> DisplayMenu
+
+state DisplayMenu {
+    [*] --> WaitingForInput
+    WaitingForInput --> PointOps : option 1
+    WaitingForInput --> LineOps : option 2
+    WaitingForInput --> TriangleOps : option 3
+    WaitingForInput --> RectangleOps : option 4
+    WaitingForInput --> CircleOps : option 5
+    WaitingForInput --> MatrixOps : option 6
+    WaitingForInput --> VectorOps : option 7
+    WaitingForInput --> [*] : option 0
+}
+
+PointOps --> DisplayMenu : done
+LineOps --> DisplayMenu : done
+TriangleOps --> DisplayMenu : done
+RectangleOps --> DisplayMenu : done
+CircleOps --> DisplayMenu : done
+MatrixOps --> DisplayMenu : done
+VectorOps --> DisplayMenu : done
+@enduml
