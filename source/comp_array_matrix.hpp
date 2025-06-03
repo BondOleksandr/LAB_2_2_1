@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include "all_matrix&vector.hpp"
+#include "array_realization.hpp"
 
 struct Element_Matrix {
     double val = 0;
@@ -9,7 +9,7 @@ struct Element_Matrix {
     int clmn = -1;
 };
 
-class ArrMatrix : public MatrixBase {
+class ArrMatrix : public ArrayRealization {
 private:
     Element_Matrix* arr;
     int size;

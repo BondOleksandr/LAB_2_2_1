@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "RNG.hpp"
-#include "all_matrix&vector.hpp"
+#include "list_realization.hpp"
 
 typedef struct Vector_Node {
     double val;
@@ -9,7 +9,7 @@ typedef struct Vector_Node {
     Vector_Node* next;
 } VListn, *Vector_Listnp;
 
-class ListVector : public MatrixBase {
+class ListVector : public ListRealization {
 private:
     Vector_Listnp Head;
     int size;

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "all_matrix&vector.hpp"
+#include "array_realization.hpp"
 
 struct Element_Vector {
     double val = 0;
     int index = -1;
 };
 
-class ArrVector : public MatrixBase {
+class ArrVector : public ArrayRealization{
 private:
     Element_Vector* arr;
     bool row;

@@ -1,7 +1,6 @@
 #include <iostream>
 #include "source/point.hpp"
 #include "source/line.hpp"
-#include "source/all_matrix&vector.hpp"
 #include "source/figure.hpp"
 #include "source/triangle.hpp"
 #include "source/rectangle.hpp"
@@ -10,6 +9,8 @@
 #include "source/comp_array_vector.hpp"
 #include "source/comp_linked_list_matrix.hpp"
 #include "source/comp_linked_list_vector.hpp"
+#include "source/array_realization.hpp"
+#include "source/list_realization.hpp"
 
 using namespace std;
 

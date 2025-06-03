@@ -9,7 +9,6 @@ ListMatrix::ListMatrix(int inSize, double** matrix) : size(inSize), Head(nullptr
     Head->next = NULL;
     Head->row = 0;
     Head->clmn = 0;
-
     for (int i = 0; i < inSize; i++) {
         for (int j = 0; j < inSize; j++) {
             if (matrix[i][j]) {
@@ -87,107 +86,120 @@ Matrix_Listnp ListMatrix::INDsearch(int ROW, int CLMN) {
     return crnt;
 }
 
-ListMatrix ListMatrix::Summ(ListMatrix A, ListMatrix B) {
+ListMatrix ListMatrix::Summ(ListMatrix A, ListMatrix B) {//REMASTERED
     if (!A.Head->val) return B;
     if (!B.Head->val) return A;
-    ListMatrix RESULT(0, 0);
-    Matrix_Listnp Ccrnt = new Matrix_Node;
+    Matrix_Listnp REScrnt = new Matrix_Node;
+
+    double** array_for_creation = new double*[A.size];//CRUTCH!
+    for(int i=0;i<A.size;i++){
+        array_for_creation[i] = new double[A.size];
+        for(int j=0;j<A.size;j++)array_for_creation[i][j]=0;
+    }
+
+    ListMatrix RESULT(A.size,array_for_creation);
+    delete array_for_creation;
+
     Matrix_Listnp Acrnt = A.Head;
     Matrix_Listnp Bcrnt = B.Head;
     RESULT.Head = new Matrix_Node;
-    RESULT.size = A.size;
+    Matrix_Listnp Non_Deplete = new Matrix_Node;
 
-    if (A.Head->row > B.Head->row || (A.Head->row == B.Head->row && A.Head->clmn > B.Head->clmn)) {
-        RESULT.Head->val = B.Head->val;
-        RESULT.Head->row = B.Head->row;
-        RESULT.Head->clmn = B.Head->clmn;
-        RESULT.Head->next = NULL;
-        Bcrnt = B.Head->next;
-    } else if (A.Head->row == B.Head->row && A.Head->clmn == B.Head->clmn) {
-        RESULT.Head->val = B.Head->val + A.Head->val;
-        RESULT.Head->row = B.Head->row;
-        RESULT.Head->clmn = B.Head->clmn;
-        RESULT.Head->next = NULL;
-        Bcrnt = B.Head->next;
-        Acrnt = A.Head->next;
-    } else {
-        RESULT.Head->val = A.Head->val;
-        RESULT.Head->row = A.Head->row;
-        RESULT.Head->clmn = A.Head->clmn;
-        RESULT.Head->next = NULL;
-        Acrnt = A.Head->next;
+    auto create_node_no_sum = [](Matrix_Listnp A) -> Matrix_Listnp {
+        Matrix_Listnp aux = new Matrix_Node;
+        aux->val = A->val;
+        aux->row = A->row;
+        aux->clmn = A->clmn;
+        aux->next = NULL;
+        return aux;
+    };
+
+        auto create_node_sum = [](Matrix_Listnp A, Matrix_Listnp B) -> Matrix_Listnp {
+        Matrix_Listnp aux = new Matrix_Node;
+        aux->val = A->val+B->val;
+        aux->row = A->row;
+        aux->clmn = A->clmn;
+        aux->next = NULL;
+        return aux;
+    };
+    
+    //creating Head
+    if(Acrnt->row != Bcrnt->row){//diffirent rows(selecting with smaller row)
+    if(Acrnt->row < Bcrnt->row){//A sooner
+    RESULT.Head = create_node_no_sum(Acrnt);
+    Acrnt = Acrnt->next;
     }
-
-    Ccrnt = RESULT.Head;
-
-    while ((Acrnt && Bcrnt) && Acrnt->row < Bcrnt->row) {
-        Matrix_Listnp p = new Matrix_Node;
-        *p = *Acrnt;
-        p->next = NULL;
-        Ccrnt->next = p;
-        Ccrnt = p;
-        Acrnt = Acrnt->next;
+    else{//B sooner
+    RESULT.Head = create_node_no_sum(Bcrnt);
+    Bcrnt = Bcrnt->next;
     }
-
-    while ((Acrnt && Bcrnt) && Acrnt->row > Bcrnt->row) {
-        Matrix_Listnp p = new Matrix_Node;
-        *p = *Bcrnt;
-        p->next = NULL;
-        Ccrnt->next = p;
-        Ccrnt = p;
+    }
+        
+    else{//equal rows(looking into columns)
+    if(Acrnt->clmn < Bcrnt->clmn){//A sooner
+    RESULT.Head = create_node_no_sum(Acrnt);
+    Acrnt = Acrnt->next;
+    }
+    else{//B sooner or equal
+        if(Acrnt->clmn > Bcrnt->clmn){//B sooner
+        RESULT.Head = create_node_no_sum(Bcrnt);
         Bcrnt = Bcrnt->next;
+        }
+        else{//equal rows and columns, summing on head
+        RESULT.Head = create_node_sum(Bcrnt, Acrnt);
+        Bcrnt = Bcrnt->next;
+        Acrnt = Acrnt->next;
+        }
     }
-
-    while (Acrnt && Bcrnt && Acrnt->row == Bcrnt->row) {
-        while (Acrnt && Bcrnt && Acrnt->clmn < Bcrnt->clmn) {
-            Matrix_Listnp p = new Matrix_Node;
-            *p = *Acrnt;
-            p->next = NULL;
-            Ccrnt->next = p;
-            Ccrnt = p;
+    }
+    REScrnt = RESULT.Head;
+    ///
+        
+    while(Acrnt&&Bcrnt){//Summing while both non-depleted
+        if(Acrnt->row == Bcrnt->row){
+        if(Acrnt->clmn<Bcrnt->clmn){
+            REScrnt->next = create_node_no_sum(Acrnt);
+            REScrnt = REScrnt->next;
             Acrnt = Acrnt->next;
         }
-
-        while (Acrnt && Bcrnt && Acrnt->clmn > Bcrnt->clmn) {
-            Matrix_Listnp p = new Matrix_Node;
-            *p = *Bcrnt;
-            p->next = NULL;
-            Ccrnt->next = p;
-            Ccrnt = p;
+        else{
+            if(Acrnt->clmn>Bcrnt->clmn){
+            REScrnt->next = create_node_no_sum(Bcrnt);
+            REScrnt = REScrnt->next;
             Bcrnt = Bcrnt->next;
-        }
-
-        while (Acrnt && Bcrnt && Acrnt->clmn == Bcrnt->clmn) {
-            Matrix_Listnp p = new Matrix_Node;
-            p->val = Acrnt->val + Bcrnt->val;
-            p->row = Acrnt->row;
-            p->clmn = Acrnt->clmn;
-            p->next = NULL;
-            Ccrnt->next = p;
-            Ccrnt = p;
+            }
+        else{
+            REScrnt->next = create_node_sum(Acrnt, Bcrnt);
+            REScrnt = REScrnt->next;
+            Bcrnt = Bcrnt->next;
             Acrnt = Acrnt->next;
+        }
+        }
+        }
+        else{
+        if(Acrnt->row < Bcrnt->row){
+            REScrnt->next = create_node_no_sum(Acrnt);
+            REScrnt = REScrnt->next;
+            Acrnt = Acrnt->next;
+            }
+        else {
+            REScrnt->next = create_node_no_sum(Bcrnt);
+            REScrnt = REScrnt->next;
             Bcrnt = Bcrnt->next;
+            }
         }
     }
+    ///
 
-    while (Acrnt) {
-        Matrix_Listnp p = new Matrix_Node;
-        *p = *Acrnt;
-        p->next = NULL;
-        Ccrnt->next = p;
-        Ccrnt = p;
-        Acrnt = Acrnt->next;
+    if(Acrnt)Non_Deplete=Acrnt;//selecting non-empty
+    else Non_Deplete = Bcrnt;
+
+    while (Non_Deplete){//summing when one or both are empty(doesn't enter when both)
+        REScrnt->next = create_node_no_sum(Non_Deplete);
+        REScrnt = REScrnt->next;
+        Non_Deplete = Non_Deplete->next;
     }
-
-    while (Bcrnt) {
-        Matrix_Listnp p = new Matrix_Node;
-        *p = *Bcrnt;
-        p->next = NULL;
-        Ccrnt->next = p;
-        Ccrnt = p;
-        Bcrnt = Bcrnt->next;
-    }
-
+    ///
     return RESULT;
 }
 

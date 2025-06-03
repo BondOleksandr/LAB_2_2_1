@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include "source/catch_amalgamated.hpp"
-#include "source/all_matrix&vector.hpp"
+#include "source/list_realization.hpp"
+#include "source/array_realization.hpp"
 #include "source/figure.hpp"
 #include "source/RNG.hpp"
 #include "source/point.hpp"
