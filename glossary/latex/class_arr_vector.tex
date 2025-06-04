@@ -1,0 +1,121 @@
+\doxysection{Arr\+Vector Class Reference}
+\hypertarget{class_arr_vector}{}\label{class_arr_vector}\index{ArrVector@{ArrVector}}
+
+
+Array-\/based realization of a sparse vector.  
+
+
+
+
+{\ttfamily \#include $<$comp\+\_\+array\+\_\+vector.\+hpp$>$}
+
+Inheritance diagram for Arr\+Vector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_arr_vector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_arr_vector_a7c7fa06a4c87d96c2f9aab78fcab44e8}{Arr\+Vector}} (int in\+Size, double \texorpdfstring{$\ast$}{*}vector, bool ROW)
+\begin{DoxyCompactList}\small\item\em Constructs a sparse vector from a dense array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_arr_vector_a5bfef0589a8726933adb494012dd3e3c}{print}} () override
+\begin{DoxyCompactList}\small\item\em Prints the stored vector elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element___vector}{Element\+\_\+\+Vector}} \mbox{\hyperlink{class_arr_vector_a37fa6706394ada3b30154e2a0a8e6be0}{Val\+Search}} (double check)
+\begin{DoxyCompactList}\small\item\em Searches for an element with the given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_element___vector}{Element\+\_\+\+Vector}} \mbox{\hyperlink{class_arr_vector_a675fefb709aeefcc11053678ebb8dfc2}{Ind\+Search}} (double IDX)
+\begin{DoxyCompactList}\small\item\em Searches for an element by index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_array_realization}{Array\+Realization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Array\+Realization} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Array-\/based realization of a sparse vector. 
+
+\label{doc-constructors}
+\Hypertarget{class_arr_vector_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_arr_vector_a7c7fa06a4c87d96c2f9aab78fcab44e8}\index{ArrVector@{ArrVector}!ArrVector@{ArrVector}}
+\index{ArrVector@{ArrVector}!ArrVector@{ArrVector}}
+\doxysubsubsection{\texorpdfstring{ArrVector()}{ArrVector()}}
+{\footnotesize\ttfamily \label{class_arr_vector_a7c7fa06a4c87d96c2f9aab78fcab44e8} 
+Arr\+Vector\+::\+Arr\+Vector (\begin{DoxyParamCaption}\item[{int}]{in\+Size}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{vector}{, }\item[{bool}]{ROW}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a sparse vector from a dense array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Size} & Size of the vector. \\
+\hline
+{\em vector} & Pointer to the dense array. \\
+\hline
+{\em ROW} & True if the vector is a row vector, false if column vector. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_arr_vector_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_arr_vector_a675fefb709aeefcc11053678ebb8dfc2}\index{ArrVector@{ArrVector}!IndSearch@{IndSearch}}
+\index{IndSearch@{IndSearch}!ArrVector@{ArrVector}}
+\doxysubsubsection{\texorpdfstring{IndSearch()}{IndSearch()}}
+{\footnotesize\ttfamily \label{class_arr_vector_a675fefb709aeefcc11053678ebb8dfc2} 
+\mbox{\hyperlink{struct_element___vector}{Element\+\_\+\+Vector}} Arr\+Vector\+::\+Ind\+Search (\begin{DoxyParamCaption}\item[{double}]{IDX}{}\end{DoxyParamCaption})}
+
+
+
+Searches for an element by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IDX} & Index to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_element___vector}{Element\+\_\+\+Vector} at the given index, or default if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_arr_vector_a5bfef0589a8726933adb494012dd3e3c}\index{ArrVector@{ArrVector}!print@{print}}
+\index{print@{print}!ArrVector@{ArrVector}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{class_arr_vector_a5bfef0589a8726933adb494012dd3e3c} 
+void Arr\+Vector\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints the stored vector elements. 
+
+
+
+Implements \mbox{\hyperlink{class_array_realization_a28295bd33e60d87f95be1ed18a2d0be1}{Array\+Realization}}.
+
+\Hypertarget{class_arr_vector_a37fa6706394ada3b30154e2a0a8e6be0}\index{ArrVector@{ArrVector}!ValSearch@{ValSearch}}
+\index{ValSearch@{ValSearch}!ArrVector@{ArrVector}}
+\doxysubsubsection{\texorpdfstring{ValSearch()}{ValSearch()}}
+{\footnotesize\ttfamily \label{class_arr_vector_a37fa6706394ada3b30154e2a0a8e6be0} 
+\mbox{\hyperlink{struct_element___vector}{Element\+\_\+\+Vector}} Arr\+Vector\+::\+Val\+Search (\begin{DoxyParamCaption}\item[{double}]{check}{}\end{DoxyParamCaption})}
+
+
+
+Searches for an element with the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check} & Value to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_element___vector}{Element\+\_\+\+Vector} with value and index, or default if not found. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+comp\+\_\+array\+\_\+vector.\+hpp\item 
+comp\+\_\+array\+\_\+vector.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\doxysection{comp\+\_\+linked\+\_\+list\+\_\+matrix.\+hpp}
+\hypertarget{comp__linked__list__matrix_8hpp_source}{}\label{comp__linked__list__matrix_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}RNG.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}list\_realization.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_matrix___node}{Matrix\_Node}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_matrix___node_ae105f0e289fd350215faa55d794c37de}{val}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_matrix___node_ada537e41d07dd90ecbb25bbaed16f790}{row}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_matrix___node_a9b9037a73c351d4ad720d60e24a33580}{clmn}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_matrix___node}{Matrix\_Node}}*\ \mbox{\hyperlink{struct_matrix___node_a31f9d1b64772a925dd7047b4771f28fb}{next}};\ \ \ \ \ }
+\DoxyCodeLine{00015\ \}\ MListn,\ *Matrix\_Listnp;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_list_realization}{ListRealization}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ Matrix\_Listnp\ Head;\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ size;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}(\textcolor{keywordtype}{int}\ inSize,\ \textcolor{keywordtype}{double}**\ matrix);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_list_matrix_a04e9c904308057faf00ad7f38f34689f}{print}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ Matrix\_Listnp\ \mbox{\hyperlink{class_list_matrix_a8bbaacd41d0936014acf59f242217911}{Valsearch}}(\textcolor{keywordtype}{double}\ check);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ Matrix\_Listnp\ \mbox{\hyperlink{class_list_matrix_a5671d7e67ef649df3a9e49c38218bbe8}{INDsearch}}(\textcolor{keywordtype}{int}\ ROW,\ \textcolor{keywordtype}{int}\ CLMN);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}\ \mbox{\hyperlink{class_list_matrix_a47399bb3087741f5cfcafd1b0d32afc8}{Summ}}(\mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}\ A,\ \mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}\ B);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_list_matrix_a24f7a96bdf479c9186dc24ab06fd5591}{xScalar}}(\mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{ListMatrix}}\ A,\ \textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{00066\ \};}
+
+\end{DoxyCode}

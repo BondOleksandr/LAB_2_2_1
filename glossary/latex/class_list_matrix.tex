@@ -1,0 +1,165 @@
+\doxysection{List\+Matrix Class Reference}
+\hypertarget{class_list_matrix}{}\label{class_list_matrix}\index{ListMatrix@{ListMatrix}}
+
+
+Linked list-\/based realization of a sparse matrix.  
+
+
+
+
+{\ttfamily \#include $<$comp\+\_\+linked\+\_\+list\+\_\+matrix.\+hpp$>$}
+
+Inheritance diagram for List\+Matrix\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_list_matrix}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_list_matrix_ad99e675b211cab4d2e44a72043056247}{List\+Matrix}} (int in\+Size, double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matrix)
+\begin{DoxyCompactList}\small\item\em Constructs a sparse matrix from a dense 2D array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_list_matrix_a04e9c904308057faf00ad7f38f34689f}{print}} () override
+\begin{DoxyCompactList}\small\item\em Prints all non-\/zero matrix elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_matrix___node}{Matrix\+\_\+\+Listnp}} \mbox{\hyperlink{class_list_matrix_a8bbaacd41d0936014acf59f242217911}{Valsearch}} (double check)
+\begin{DoxyCompactList}\small\item\em Searches for a node with the specified value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_matrix___node}{Matrix\+\_\+\+Listnp}} \mbox{\hyperlink{class_list_matrix_a5671d7e67ef649df3a9e49c38218bbe8}{INDsearch}} (int ROW, int CLMN)
+\begin{DoxyCompactList}\small\item\em Searches for a node at the given row and column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_list_matrix_a24f7a96bdf479c9186dc24ab06fd5591}{x\+Scalar}} (\mbox{\hyperlink{class_list_matrix}{List\+Matrix}} A, int x)
+\begin{DoxyCompactList}\small\item\em Performs in-\/place scalar multiplication of a matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_list_realization}{List\+Realization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+List\+Realization} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_list_matrix}{List\+Matrix}} \mbox{\hyperlink{class_list_matrix_a47399bb3087741f5cfcafd1b0d32afc8}{Summ}} (\mbox{\hyperlink{class_list_matrix}{List\+Matrix}} A, \mbox{\hyperlink{class_list_matrix}{List\+Matrix}} B)
+\begin{DoxyCompactList}\small\item\em Returns the sum of two sparse matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Linked list-\/based realization of a sparse matrix. 
+
+\label{doc-constructors}
+\Hypertarget{class_list_matrix_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_list_matrix_ad99e675b211cab4d2e44a72043056247}\index{ListMatrix@{ListMatrix}!ListMatrix@{ListMatrix}}
+\index{ListMatrix@{ListMatrix}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{ListMatrix()}{ListMatrix()}}
+{\footnotesize\ttfamily \label{class_list_matrix_ad99e675b211cab4d2e44a72043056247} 
+List\+Matrix\+::\+List\+Matrix (\begin{DoxyParamCaption}\item[{int}]{in\+Size}{, }\item[{double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matrix}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a sparse matrix from a dense 2D array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Size} & Size of the square matrix. \\
+\hline
+{\em matrix} & Pointer to the 2D array. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_list_matrix_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_list_matrix_a5671d7e67ef649df3a9e49c38218bbe8}\index{ListMatrix@{ListMatrix}!INDsearch@{INDsearch}}
+\index{INDsearch@{INDsearch}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{INDsearch()}{INDsearch()}}
+{\footnotesize\ttfamily \label{class_list_matrix_a5671d7e67ef649df3a9e49c38218bbe8} 
+\mbox{\hyperlink{struct_matrix___node}{Matrix\+\_\+\+Listnp}} List\+Matrix\+::\+INDsearch (\begin{DoxyParamCaption}\item[{int}]{ROW}{, }\item[{int}]{CLMN}{}\end{DoxyParamCaption})}
+
+
+
+Searches for a node at the given row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ROW} & Row index. \\
+\hline
+{\em CLMN} & Column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the node at (ROW, CLMN), or zero-\/node if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_list_matrix_a04e9c904308057faf00ad7f38f34689f}\index{ListMatrix@{ListMatrix}!print@{print}}
+\index{print@{print}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{class_list_matrix_a04e9c904308057faf00ad7f38f34689f} 
+void List\+Matrix\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints all non-\/zero matrix elements. 
+
+
+
+Implements \mbox{\hyperlink{class_list_realization_ac181a7338f56b8f90f71cf451e4092e9}{List\+Realization}}.
+
+\Hypertarget{class_list_matrix_a47399bb3087741f5cfcafd1b0d32afc8}\index{ListMatrix@{ListMatrix}!Summ@{Summ}}
+\index{Summ@{Summ}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{Summ()}{Summ()}}
+{\footnotesize\ttfamily \label{class_list_matrix_a47399bb3087741f5cfcafd1b0d32afc8} 
+\mbox{\hyperlink{class_list_matrix}{List\+Matrix}} List\+Matrix\+::\+Summ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_list_matrix}{List\+Matrix}}}]{A}{, }\item[{\mbox{\hyperlink{class_list_matrix}{List\+Matrix}}}]{B}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the sum of two sparse matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & First matrix. \\
+\hline
+{\em B} & Second matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New \doxylink{class_list_matrix}{List\+Matrix} representing the element-\/wise sum. 
+\end{DoxyReturn}
+\Hypertarget{class_list_matrix_a8bbaacd41d0936014acf59f242217911}\index{ListMatrix@{ListMatrix}!Valsearch@{Valsearch}}
+\index{Valsearch@{Valsearch}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{Valsearch()}{Valsearch()}}
+{\footnotesize\ttfamily \label{class_list_matrix_a8bbaacd41d0936014acf59f242217911} 
+\mbox{\hyperlink{struct_matrix___node}{Matrix\+\_\+\+Listnp}} List\+Matrix\+::\+Valsearch (\begin{DoxyParamCaption}\item[{double}]{check}{}\end{DoxyParamCaption})}
+
+
+
+Searches for a node with the specified value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check} & Value to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the matching node or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_list_matrix_a24f7a96bdf479c9186dc24ab06fd5591}\index{ListMatrix@{ListMatrix}!xScalar@{xScalar}}
+\index{xScalar@{xScalar}!ListMatrix@{ListMatrix}}
+\doxysubsubsection{\texorpdfstring{xScalar()}{xScalar()}}
+{\footnotesize\ttfamily \label{class_list_matrix_a24f7a96bdf479c9186dc24ab06fd5591} 
+void List\+Matrix\+::x\+Scalar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_list_matrix}{List\+Matrix}}}]{A}{, }\item[{int}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Performs in-\/place scalar multiplication of a matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Matrix to be multiplied. \\
+\hline
+{\em x} & Scalar multiplier. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+comp\+\_\+linked\+\_\+list\+\_\+matrix.\+hpp\item 
+comp\+\_\+linked\+\_\+list\+\_\+matrix.\+cpp\end{DoxyCompactItemize}

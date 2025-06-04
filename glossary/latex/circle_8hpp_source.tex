@@ -1,0 +1,33 @@
+\doxysection{circle.\+hpp}
+\hypertarget{circle_8hpp_source}{}\label{circle_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}figure.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ center;\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{double}\ r;\ \ \ \ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ cent,\ \textcolor{keywordtype}{double}\ r);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getO()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{double}\ getR()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ setO(\mbox{\hyperlink{class_point}{Point}}\ newCenter);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ setR(\textcolor{keywordtype}{double}\ newR);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_circle_aed8b55a5b19836bc67a5260cc90bdb72}{shift}}(\textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dy)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_circle_ab8470ba075efcfb709323ecc16209124}{printInfo}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_circle_abcbbecda2c503d74ecd69d2b17c8ab40}{area}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}}\&\ CL);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_circle_a544e38da9adc029863c1fe4c6e98077d}{perimeter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}}\&\ CL);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}}\ \mbox{\hyperlink{class_circle_a6e866004cfcab325c277948198423ffa}{GEN}}();}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}

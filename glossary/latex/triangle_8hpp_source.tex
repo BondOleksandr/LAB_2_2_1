@@ -1,0 +1,44 @@
+\doxysection{triangle.\+hpp}
+\hypertarget{triangle_8hpp_source}{}\label{triangle_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}line.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}figure.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ a,\ b,\ c;\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ c);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getA()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getC()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ setA(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newA);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ setB(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newB);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setC(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newC);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\ \mbox{\hyperlink{class_triangle_ae4630a1304b7ee568181bf5507f748c1}{GEN}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_triangle_aa395ac08f04e6f7f2b8afed1f4e7b8cb}{printInfo}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_triangle_a21cb3c6989413f6ad4fdba6a91d8ac4e}{shift}}(\textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dy)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_triangle_a5360e6494264294543180585cd5dbba2}{area}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ ABC);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_triangle_a2ddae893e671e83c2eb28d6ee0277a7f}{outcircle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ ABC);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_triangle_a1fc4dca98a8eef30fa1fb6e6890938cc}{incircle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ ABC);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_triangle_abcc6540e75d99fcb2a8d604636172a71}{perimeter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ ABC);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_triangle_a738fdb1ff6f2de365442bc30b4b5b331}{issimilar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ ABC,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}}\&\ XYZ);}
+\DoxyCodeLine{00088\ \};}
+
+\end{DoxyCode}

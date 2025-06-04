@@ -1,0 +1,159 @@
+\doxysection{Line Class Reference}
+\hypertarget{class_line}{}\label{class_line}\index{Line@{Line}}
+
+
+Represents a line segment defined by two Points in 2D space.  
+
+
+
+
+{\ttfamily \#include $<$line.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_line_a0ec34f80a43014768ec228bfa87fd15f}{Line}} (const \mbox{\hyperlink{class_point}{Point}} \&a, const \mbox{\hyperlink{class_point}{Point}} \&b)
+\begin{DoxyCompactList}\small\item\em Constructs a line segment from two points. \end{DoxyCompactList}\item 
+\Hypertarget{class_line_ac77776ba20443fbd1a63306145673193}\label{class_line_ac77776ba20443fbd1a63306145673193} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries get\+Point\+BEG} () const
+\item 
+\Hypertarget{class_line_a48ab984b4a7e61a75c5525d25b578dce}\label{class_line_a48ab984b4a7e61a75c5525d25b578dce} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries get\+Point\+END} () const
+\item 
+\Hypertarget{class_line_a33ef6077a97505ec6cc88ae5ba16c4a7}\label{class_line_a33ef6077a97505ec6cc88ae5ba16c4a7} 
+void {\bfseries print\+Info} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_line_a9700b3ca09d36502ac64184d29f46e2a}\label{class_line_a9700b3ca09d36502ac64184d29f46e2a} 
+static \mbox{\hyperlink{class_line}{Line}} {\bfseries GEN} ()
+\begin{DoxyCompactList}\small\item\em Generates a line from random points. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_line_aed32384b359d0c3ea5abb1d049de1c56}{is\+Paralel}} (const \mbox{\hyperlink{class_line}{Line}} \&z, \mbox{\hyperlink{class_line}{Line}} \&u)
+\begin{DoxyCompactList}\small\item\em Checks if two lines are parallel. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_line_a6cb3e68eab17431505b2b781b0144386}{crossing}} (const \mbox{\hyperlink{class_line}{Line}} \&z, \mbox{\hyperlink{class_line}{Line}} \&u)
+\begin{DoxyCompactList}\small\item\em Returns the point of intersection of two lines. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_line_a3a18b2aae5d6296e9d21a1a0fc05a40b}{angle}} (const \mbox{\hyperlink{class_line}{Line}} \&z, \mbox{\hyperlink{class_line}{Line}} \&u)
+\begin{DoxyCompactList}\small\item\em Returns the angle between two lines in radians. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_line_af7f32e8e578665c9d4186312a9713591}{LLength}} (const \mbox{\hyperlink{class_line}{Line}} \&z)
+\begin{DoxyCompactList}\small\item\em Returns the Euclidean length of the given line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a line segment defined by two Points in 2D space. 
+
+\label{doc-constructors}
+\Hypertarget{class_line_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_line_a0ec34f80a43014768ec228bfa87fd15f}\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{Line()}{Line()}}
+{\footnotesize\ttfamily \label{class_line_a0ec34f80a43014768ec228bfa87fd15f} 
+Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a line segment from two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Starting point. \\
+\hline
+{\em b} & Ending point. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_line_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_line_a3a18b2aae5d6296e9d21a1a0fc05a40b}\index{Line@{Line}!angle@{angle}}
+\index{angle@{angle}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{angle()}{angle()}}
+{\footnotesize\ttfamily \label{class_line_a3a18b2aae5d6296e9d21a1a0fc05a40b} 
+double Line\+::angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line}{Line}} \&}]{z}{, }\item[{\mbox{\hyperlink{class_line}{Line}} \&}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the angle between two lines in radians. 
+
+Uses vector dot product and arccos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & First line. \\
+\hline
+{\em u} & Second line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angle in radians. 
+\end{DoxyReturn}
+\Hypertarget{class_line_a6cb3e68eab17431505b2b781b0144386}\index{Line@{Line}!crossing@{crossing}}
+\index{crossing@{crossing}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{crossing()}{crossing()}}
+{\footnotesize\ttfamily \label{class_line_a6cb3e68eab17431505b2b781b0144386} 
+\mbox{\hyperlink{class_point}{Point}} Line\+::crossing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line}{Line}} \&}]{z}{, }\item[{\mbox{\hyperlink{class_line}{Line}} \&}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the point of intersection of two lines. 
+
+If the lines are parallel, returns a placeholder point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & First line. \\
+\hline
+{\em u} & Second line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersection point. 
+\end{DoxyReturn}
+\Hypertarget{class_line_aed32384b359d0c3ea5abb1d049de1c56}\index{Line@{Line}!isParalel@{isParalel}}
+\index{isParalel@{isParalel}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{isParalel()}{isParalel()}}
+{\footnotesize\ttfamily \label{class_line_aed32384b359d0c3ea5abb1d049de1c56} 
+bool Line\+::is\+Paralel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line}{Line}} \&}]{z}{, }\item[{\mbox{\hyperlink{class_line}{Line}} \&}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if two lines are parallel. 
+
+Compares the slopes of the lines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & First line. \\
+\hline
+{\em u} & Second line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if lines are parallel, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_line_af7f32e8e578665c9d4186312a9713591}\index{Line@{Line}!LLength@{LLength}}
+\index{LLength@{LLength}!Line@{Line}}
+\doxysubsubsection{\texorpdfstring{LLength()}{LLength()}}
+{\footnotesize\ttfamily \label{class_line_af7f32e8e578665c9d4186312a9713591} 
+double Line\+::\+LLength (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_line}{Line}} \&}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the Euclidean length of the given line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & \doxylink{class_line}{Line} whose length to compute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the line. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+line.\+hpp\item 
+line.\+cpp\end{DoxyCompactItemize}

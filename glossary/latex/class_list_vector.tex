@@ -1,0 +1,123 @@
+\doxysection{List\+Vector Class Reference}
+\hypertarget{class_list_vector}{}\label{class_list_vector}\index{ListVector@{ListVector}}
+
+
+Linked list-\/based realization of a sparse vector.  
+
+
+
+
+{\ttfamily \#include $<$comp\+\_\+linked\+\_\+list\+\_\+vector.\+hpp$>$}
+
+Inheritance diagram for List\+Vector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_list_vector}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_list_vector_af1984cd8f21425f6d3e50673d94717d3}{List\+Vector}} (int in\+Size, double \texorpdfstring{$\ast$}{*}vector, bool ROW)
+\begin{DoxyCompactList}\small\item\em Constructs a sparse vector from a dense array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_list_vector_a5e35fc63ebbdb94c77ed8c3f7660a1b2}{print}} () override
+\begin{DoxyCompactList}\small\item\em Prints the stored vector elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector___node}{Vector\+\_\+\+Listnp}} \mbox{\hyperlink{class_list_vector_af9e844126f3645ebcb37c6645a717fd2}{Valsearch}} (double check)
+\begin{DoxyCompactList}\small\item\em Searches for a node with the specified value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector___node}{Vector\+\_\+\+Listnp}} \mbox{\hyperlink{class_list_vector_ac4e2f4850f3691c9564a361d026d6c58}{INDsearch}} (int IDX)
+\begin{DoxyCompactList}\small\item\em Searches for a node at a given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_list_realization}{List\+Realization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+List\+Realization} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic cleanup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Linked list-\/based realization of a sparse vector. 
+
+\label{doc-constructors}
+\Hypertarget{class_list_vector_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_list_vector_af1984cd8f21425f6d3e50673d94717d3}\index{ListVector@{ListVector}!ListVector@{ListVector}}
+\index{ListVector@{ListVector}!ListVector@{ListVector}}
+\doxysubsubsection{\texorpdfstring{ListVector()}{ListVector()}}
+{\footnotesize\ttfamily \label{class_list_vector_af1984cd8f21425f6d3e50673d94717d3} 
+List\+Vector\+::\+List\+Vector (\begin{DoxyParamCaption}\item[{int}]{in\+Size}{, }\item[{double \texorpdfstring{$\ast$}{*}}]{vector}{, }\item[{bool}]{ROW}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a sparse vector from a dense array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Size} & Size of the vector. \\
+\hline
+{\em vector} & Pointer to the dense array. \\
+\hline
+{\em ROW} & True if the vector is a row vector, false if column vector. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_list_vector_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_list_vector_ac4e2f4850f3691c9564a361d026d6c58}\index{ListVector@{ListVector}!INDsearch@{INDsearch}}
+\index{INDsearch@{INDsearch}!ListVector@{ListVector}}
+\doxysubsubsection{\texorpdfstring{INDsearch()}{INDsearch()}}
+{\footnotesize\ttfamily \label{class_list_vector_ac4e2f4850f3691c9564a361d026d6c58} 
+\mbox{\hyperlink{struct_vector___node}{Vector\+\_\+\+Listnp}} List\+Vector\+::\+INDsearch (\begin{DoxyParamCaption}\item[{int}]{IDX}{}\end{DoxyParamCaption})}
+
+
+
+Searches for a node at a given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IDX} & Index to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the node at the given index, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{class_list_vector_a5e35fc63ebbdb94c77ed8c3f7660a1b2}\index{ListVector@{ListVector}!print@{print}}
+\index{print@{print}!ListVector@{ListVector}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{class_list_vector_a5e35fc63ebbdb94c77ed8c3f7660a1b2} 
+void List\+Vector\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints the stored vector elements. 
+
+
+
+Implements \mbox{\hyperlink{class_list_realization_ac181a7338f56b8f90f71cf451e4092e9}{List\+Realization}}.
+
+\Hypertarget{class_list_vector_af9e844126f3645ebcb37c6645a717fd2}\index{ListVector@{ListVector}!Valsearch@{Valsearch}}
+\index{Valsearch@{Valsearch}!ListVector@{ListVector}}
+\doxysubsubsection{\texorpdfstring{Valsearch()}{Valsearch()}}
+{\footnotesize\ttfamily \label{class_list_vector_af9e844126f3645ebcb37c6645a717fd2} 
+\mbox{\hyperlink{struct_vector___node}{Vector\+\_\+\+Listnp}} List\+Vector\+::\+Valsearch (\begin{DoxyParamCaption}\item[{double}]{check}{}\end{DoxyParamCaption})}
+
+
+
+Searches for a node with the specified value. 
+
+Only non-\/zero elements are stored and searchable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em check} & Value to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the node with the given value, or nullptr if not found. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+comp\+\_\+linked\+\_\+list\+\_\+vector.\+hpp\item 
+comp\+\_\+linked\+\_\+list\+\_\+vector.\+cpp\end{DoxyCompactItemize}

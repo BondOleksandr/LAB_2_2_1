@@ -1,0 +1,42 @@
+\doxysection{rectangle.\+hpp}
+\hypertarget{rectangle_8hpp_source}{}\label{rectangle_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}point.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}line.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}figure.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_figure}{Figure}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ a,\ b,\ c,\ d;\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ d);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getA()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getB()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getC()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ getD()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ setA(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newA);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ setB(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newB);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ setC(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newC);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setD(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\&\ newD);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}\ \mbox{\hyperlink{class_rectangle_a44c68a57e19acf06c0f0671c392bdb5f}{GEN}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_afa6bd15c741c1f4f9ff650aeb02d1c1a}{printInfo}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rectangle_ac44ddad8a78674fb144d48ab35729895}{shift}}(\textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dy)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_rectangle_aade8381375844c015942c5545296ce77}{isconvex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}\&\ ABCD);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rectangle_a2a95cb439ed740f2ae189d240bbe6740}{perimeter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}\&\ ABCD);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_rectangle_a87c9246ac5a6de98f7d149821ec27d1e}{area}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}}\&\ ABCD);}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

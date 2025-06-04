@@ -1,0 +1,34 @@
+\doxysection{point.\+hpp}
+\hypertarget{point_8hpp_source}{}\label{point_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}RNG.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{double}\ x;\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ y;\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{double}\ getX()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ getY()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ setX(\textcolor{keywordtype}{double}\ newX);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ setY(\textcolor{keywordtype}{double}\ newY);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ printInfo()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}\ \mbox{\hyperlink{class_point_a97fcd710b2f0275b046659f569cd2fce}{GEN}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_point_a6943e331d9660873427162e84eb12ef8}{shift}}(\textcolor{keywordtype}{double}\ dx,\ \textcolor{keywordtype}{double}\ dy);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_point_a0a9f10dc7560cd76998fee92152252de}{isOnLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}\&\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}}\&\ c);}
+\DoxyCodeLine{00052\ \};}
+
+\end{DoxyCode}

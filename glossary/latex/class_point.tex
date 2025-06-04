@@ -1,0 +1,118 @@
+\doxysection{Point Class Reference}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+
+
+Represents a point in 2D space with x and y coordinates.  
+
+
+
+
+{\ttfamily \#include $<$point.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}{Point}} (double x, double y)
+\begin{DoxyCompactList}\small\item\em Constructs a point with given coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{class_point_a655794dd595a4821987664bf1d9010e8}\label{class_point_a655794dd595a4821987664bf1d9010e8} 
+double {\bfseries getX} () const
+\item 
+\Hypertarget{class_point_aa323a12bec85e28ce6575dccec4f8b28}\label{class_point_aa323a12bec85e28ce6575dccec4f8b28} 
+double {\bfseries getY} () const
+\item 
+\Hypertarget{class_point_ae4863cb605d5bdc6451dcc668282347b}\label{class_point_ae4863cb605d5bdc6451dcc668282347b} 
+void {\bfseries setX} (double newX)
+\item 
+\Hypertarget{class_point_ae945b4fb40adb2e05a42870c274ddbf3}\label{class_point_ae945b4fb40adb2e05a42870c274ddbf3} 
+void {\bfseries setY} (double newY)
+\item 
+\Hypertarget{class_point_ad70cc51fa1c6b30d792b5ad85f0f2919}\label{class_point_ad70cc51fa1c6b30d792b5ad85f0f2919} 
+void {\bfseries print\+Info} () const
+\item 
+void \mbox{\hyperlink{class_point_a6943e331d9660873427162e84eb12ef8}{shift}} (double dx, double dy)
+\begin{DoxyCompactList}\small\item\em Shifts the point by dx along X axis and dy along Y axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_point_a97fcd710b2f0275b046659f569cd2fce}\label{class_point_a97fcd710b2f0275b046659f569cd2fce} 
+static \mbox{\hyperlink{class_point}{Point}} {\bfseries GEN} ()
+\begin{DoxyCompactList}\small\item\em Generates a point with random coordinates. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_point_a0a9f10dc7560cd76998fee92152252de}{is\+On\+Line}} (const \mbox{\hyperlink{class_point}{Point}} \&a, const \mbox{\hyperlink{class_point}{Point}} \&b, const \mbox{\hyperlink{class_point}{Point}} \&c)
+\begin{DoxyCompactList}\small\item\em Checks if point c lies on the same line as segment ab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a point in 2D space with x and y coordinates. 
+
+\label{doc-constructors}
+\Hypertarget{class_point_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily \label{class_point_a78b55e8d5466bb8c2cf60fa55f2562ff} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a point with given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate. \\
+\hline
+{\em y} & Y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_point_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_point_a0a9f10dc7560cd76998fee92152252de}\index{Point@{Point}!isOnLine@{isOnLine}}
+\index{isOnLine@{isOnLine}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{isOnLine()}{isOnLine()}}
+{\footnotesize\ttfamily \label{class_point_a0a9f10dc7560cd76998fee92152252de} 
+bool Point\+::is\+On\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{b}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if point c lies on the same line as segment ab. 
+
+Uses cross product to verify collinearity.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First point of the line. \\
+\hline
+{\em b} & Second point of the line. \\
+\hline
+{\em c} & \doxylink{class_point}{Point} to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if c lies on the line through a and b, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_point_a6943e331d9660873427162e84eb12ef8}\index{Point@{Point}!shift@{shift}}
+\index{shift@{shift}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_point_a6943e331d9660873427162e84eb12ef8} 
+void Point\+::shift (\begin{DoxyParamCaption}\item[{double}]{dx}{, }\item[{double}]{dy}{}\end{DoxyParamCaption})}
+
+
+
+Shifts the point by dx along X axis and dy along Y axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Shift along X. \\
+\hline
+{\em dy} & Shift along Y. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+point.\+hpp\item 
+point.\+cpp\end{DoxyCompactItemize}

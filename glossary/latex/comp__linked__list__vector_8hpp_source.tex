@@ -1,0 +1,31 @@
+\doxysection{comp\+\_\+linked\+\_\+list\+\_\+vector.\+hpp}
+\hypertarget{comp__linked__list__vector_8hpp_source}{}\label{comp__linked__list__vector_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}RNG.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}list\_realization.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vector___node}{Vector\_Node}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_vector___node_a20f49089d86278909dc22fc5dd0c9b5a}{val}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_vector___node_aa38b6e5d959e91e7edcc6ce107f09777}{index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{struct_vector___node}{Vector\_Node}}*\ \mbox{\hyperlink{struct_vector___node_a4c62d904afa26a699d4fbf979dd45e42}{next}};\ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \}\ VListn,\ *Vector\_Listnp;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_list_vector_af1984cd8f21425f6d3e50673d94717d3}{ListVector}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_list_realization}{ListRealization}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ Vector\_Listnp\ Head;\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ size;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ row;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_list_vector_af1984cd8f21425f6d3e50673d94717d3}{ListVector}}(\textcolor{keywordtype}{int}\ inSize,\ \textcolor{keywordtype}{double}*\ vector,\ \textcolor{keywordtype}{bool}\ ROW);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_list_vector_a5e35fc63ebbdb94c77ed8c3f7660a1b2}{print}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00046\ \ \ \ \ Vector\_Listnp\ \mbox{\hyperlink{class_list_vector_af9e844126f3645ebcb37c6645a717fd2}{Valsearch}}(\textcolor{keywordtype}{double}\ check);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ Vector\_Listnp\ \mbox{\hyperlink{class_list_vector_ac4e2f4850f3691c9564a361d026d6c58}{INDsearch}}(\textcolor{keywordtype}{int}\ IDX);}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

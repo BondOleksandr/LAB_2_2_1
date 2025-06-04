@@ -1,0 +1,30 @@
+\doxysection{comp\+\_\+array\+\_\+vector.\+hpp}
+\hypertarget{comp__array__vector_8hpp_source}{}\label{comp__array__vector_8hpp_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}array\_realization.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_element___vector}{Element\_Vector}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_element___vector_a606fff54313adb9855c43e9ea9609b9d}{val}}\ =\ 0;\ \ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_element___vector_a46d529ee11d14d1317ba6d19b897b3b1}{index}}\ =\ -\/1;\ \ }
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_arr_vector_a7c7fa06a4c87d96c2f9aab78fcab44e8}{ArrVector}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_array_realization}{ArrayRealization}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_element___vector}{Element\_Vector}}*\ arr;\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ row;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ size;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ ACTsize;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_arr_vector_a7c7fa06a4c87d96c2f9aab78fcab44e8}{ArrVector}}(\textcolor{keywordtype}{int}\ inSize,\ \textcolor{keywordtype}{double}*\ vector,\ \textcolor{keywordtype}{bool}\ ROW);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_arr_vector_a5bfef0589a8726933adb494012dd3e3c}{print}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_element___vector}{Element\_Vector}}\ \mbox{\hyperlink{class_arr_vector_a37fa6706394ada3b30154e2a0a8e6be0}{ValSearch}}(\textcolor{keywordtype}{double}\ check);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_element___vector}{Element\_Vector}}\ \mbox{\hyperlink{class_arr_vector_a675fefb709aeefcc11053678ebb8dfc2}{IndSearch}}(\textcolor{keywordtype}{double}\ IDX);}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

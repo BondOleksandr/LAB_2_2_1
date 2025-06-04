@@ -1,0 +1,238 @@
+\doxysection{Triangle Class Reference}
+\hypertarget{class_triangle}{}\label{class_triangle}\index{Triangle@{Triangle}}
+
+
+Represents a triangle defined by three 2D points.  
+
+
+
+
+{\ttfamily \#include $<$triangle.\+hpp$>$}
+
+Inheritance diagram for Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_triangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}{Triangle}} (const \mbox{\hyperlink{class_point}{Point}} \&a, const \mbox{\hyperlink{class_point}{Point}} \&b, const \mbox{\hyperlink{class_point}{Point}} \&c)
+\begin{DoxyCompactList}\small\item\em Constructs a triangle from three given points. \end{DoxyCompactList}\item 
+\Hypertarget{class_triangle_a573f57df1df40fadf138ef7f1fa477f2}\label{class_triangle_a573f57df1df40fadf138ef7f1fa477f2} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getA} () const
+\item 
+\Hypertarget{class_triangle_a106e1be51c35ea594386781faa44f17c}\label{class_triangle_a106e1be51c35ea594386781faa44f17c} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getB} () const
+\item 
+\Hypertarget{class_triangle_a142d16894ba58ebd8c40b2dce479cf29}\label{class_triangle_a142d16894ba58ebd8c40b2dce479cf29} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getC} () const
+\item 
+\Hypertarget{class_triangle_a38d4faef47a37a51716ea0683878dd97}\label{class_triangle_a38d4faef47a37a51716ea0683878dd97} 
+void {\bfseries setA} (const \mbox{\hyperlink{class_point}{Point}} \&newA)
+\item 
+\Hypertarget{class_triangle_a199c2906219ae8a68195518e0b3ee5d2}\label{class_triangle_a199c2906219ae8a68195518e0b3ee5d2} 
+void {\bfseries setB} (const \mbox{\hyperlink{class_point}{Point}} \&newB)
+\item 
+\Hypertarget{class_triangle_ae45db60cd904481d7e3fcba43b12147f}\label{class_triangle_ae45db60cd904481d7e3fcba43b12147f} 
+void {\bfseries setC} (const \mbox{\hyperlink{class_point}{Point}} \&newC)
+\item 
+void \mbox{\hyperlink{class_triangle_aa395ac08f04e6f7f2b8afed1f4e7b8cb}{print\+Info}} () const override
+\begin{DoxyCompactList}\small\item\em Prints information about the figure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_triangle_a21cb3c6989413f6ad4fdba6a91d8ac4e}{shift}} (double dx, double dy) override
+\begin{DoxyCompactList}\small\item\em Applies shift to all triangle vertices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_figure}{Figure}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Figure} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic destruction. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PrI$>$ }\\void \mbox{\hyperlink{class_figure_a0b826d5c11ab53190611e17fe3f5a381}{print\+Figure\+Info}} (const PrI \&figure)
+\begin{DoxyCompactList}\small\item\em Prints figure info using CRTP-\/like templated method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_triangle_ae4630a1304b7ee568181bf5507f748c1}\label{class_triangle_ae4630a1304b7ee568181bf5507f748c1} 
+static \mbox{\hyperlink{class_triangle}{Triangle}} {\bfseries GEN} ()
+\begin{DoxyCompactList}\small\item\em Generates a triangle with random vertices. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_triangle_a5360e6494264294543180585cd5dbba2}{area}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&ABC)
+\begin{DoxyCompactList}\small\item\em Calculates the area of a triangle using two sides and sine of the angle between them. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_triangle_a2ddae893e671e83c2eb28d6ee0277a7f}{outcircle}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&ABC)
+\begin{DoxyCompactList}\small\item\em Returns the circumcenter of the triangle. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_point}{Point}} \mbox{\hyperlink{class_triangle_a1fc4dca98a8eef30fa1fb6e6890938cc}{incircle}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&ABC)
+\begin{DoxyCompactList}\small\item\em Returns the incenter of the triangle. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_triangle_abcc6540e75d99fcb2a8d604636172a71}{perimeter}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&ABC)
+\begin{DoxyCompactList}\small\item\em Calculates the perimeter of the triangle. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_triangle_a738fdb1ff6f2de365442bc30b4b5b331}{issimilar}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&ABC, const \mbox{\hyperlink{class_triangle}{Triangle}} \&XYZ)
+\begin{DoxyCompactList}\small\item\em Checks whether two triangles are similar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a triangle defined by three 2D points. 
+
+\label{doc-constructors}
+\Hypertarget{class_triangle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970}\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\index{Triangle@{Triangle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{Triangle()}{Triangle()}}
+{\footnotesize\ttfamily \label{class_triangle_ad6736ceb2c5266d5654dc3e4dd6f5970} 
+Triangle\+::\+Triangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{b}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a triangle from three given points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First vertex. \\
+\hline
+{\em b} & Second vertex. \\
+\hline
+{\em c} & Third vertex. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_triangle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_triangle_a5360e6494264294543180585cd5dbba2}\index{Triangle@{Triangle}!area@{area}}
+\index{area@{area}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily \label{class_triangle_a5360e6494264294543180585cd5dbba2} 
+double Triangle\+::area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{ABC}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the area of a triangle using two sides and sine of the angle between them. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABC} & \doxylink{class_triangle}{Triangle} whose area to compute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Area of the triangle. 
+\end{DoxyReturn}
+\Hypertarget{class_triangle_a1fc4dca98a8eef30fa1fb6e6890938cc}\index{Triangle@{Triangle}!incircle@{incircle}}
+\index{incircle@{incircle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{incircle()}{incircle()}}
+{\footnotesize\ttfamily \label{class_triangle_a1fc4dca98a8eef30fa1fb6e6890938cc} 
+\mbox{\hyperlink{class_point}{Point}} Triangle\+::incircle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{ABC}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the incenter of the triangle. 
+
+The point where the angle bisectors intersect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABC} & \doxylink{class_triangle}{Triangle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Incenter point. 
+\end{DoxyReturn}
+\Hypertarget{class_triangle_a738fdb1ff6f2de365442bc30b4b5b331}\index{Triangle@{Triangle}!issimilar@{issimilar}}
+\index{issimilar@{issimilar}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{issimilar()}{issimilar()}}
+{\footnotesize\ttfamily \label{class_triangle_a738fdb1ff6f2de365442bc30b4b5b331} 
+bool Triangle\+::issimilar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{ABC}{, }\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{XYZ}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks whether two triangles are similar. 
+
+Compares corresponding angles or ratios of sides.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABC} & First triangle. \\
+\hline
+{\em XYZ} & Second triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if triangles are similar, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_triangle_a2ddae893e671e83c2eb28d6ee0277a7f}\index{Triangle@{Triangle}!outcircle@{outcircle}}
+\index{outcircle@{outcircle}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{outcircle()}{outcircle()}}
+{\footnotesize\ttfamily \label{class_triangle_a2ddae893e671e83c2eb28d6ee0277a7f} 
+\mbox{\hyperlink{class_point}{Point}} Triangle\+::outcircle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{ABC}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the circumcenter of the triangle. 
+
+The point where the perpendicular bisectors of the sides intersect.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABC} & \doxylink{class_triangle}{Triangle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Circumcenter point. 
+\end{DoxyReturn}
+\Hypertarget{class_triangle_abcc6540e75d99fcb2a8d604636172a71}\index{Triangle@{Triangle}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{perimeter()}{perimeter()}}
+{\footnotesize\ttfamily \label{class_triangle_abcc6540e75d99fcb2a8d604636172a71} 
+double Triangle\+::perimeter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{ABC}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the perimeter of the triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABC} & \doxylink{class_triangle}{Triangle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Perimeter value. 
+\end{DoxyReturn}
+\Hypertarget{class_triangle_aa395ac08f04e6f7f2b8afed1f4e7b8cb}\index{Triangle@{Triangle}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{class_triangle_aa395ac08f04e6f7f2b8afed1f4e7b8cb} 
+void Triangle\+::print\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints information about the figure. 
+
+Must be implemented by derived classes. 
+
+Implements \mbox{\hyperlink{class_figure_a605696a6d49001d966516839e9691ba1}{Figure}}.
+
+\Hypertarget{class_triangle_a21cb3c6989413f6ad4fdba6a91d8ac4e}\index{Triangle@{Triangle}!shift@{shift}}
+\index{shift@{shift}!Triangle@{Triangle}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_triangle_a21cb3c6989413f6ad4fdba6a91d8ac4e} 
+void Triangle\+::shift (\begin{DoxyParamCaption}\item[{double}]{dx}{, }\item[{double}]{dy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies shift to all triangle vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Shift along X axis. \\
+\hline
+{\em dy} & Shift along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_figure_a9f135622fc42ccb6d82a52bc812b4c41}{Figure}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+triangle.\+hpp\item 
+triangle.\+cpp\end{DoxyCompactItemize}

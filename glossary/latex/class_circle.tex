@@ -1,0 +1,164 @@
+\doxysection{Circle Class Reference}
+\hypertarget{class_circle}{}\label{class_circle}\index{Circle@{Circle}}
+
+
+Represents a circle defined by its center and radius.  
+
+
+
+
+{\ttfamily \#include $<$circle.\+hpp$>$}
+
+Inheritance diagram for Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_circle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}{Circle}} (const \mbox{\hyperlink{class_point}{Point}} \&cent, double r)
+\begin{DoxyCompactList}\small\item\em Constructs a circle with given center and radius. \end{DoxyCompactList}\item 
+\Hypertarget{class_circle_aa6fabaa838dc37aa71a2b5d45f295351}\label{class_circle_aa6fabaa838dc37aa71a2b5d45f295351} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getO} () const
+\item 
+\Hypertarget{class_circle_a9a44a938e3d8df0b6ecb6f3f00a0878d}\label{class_circle_a9a44a938e3d8df0b6ecb6f3f00a0878d} 
+double {\bfseries getR} () const
+\item 
+\Hypertarget{class_circle_a89440566d7fa8f7b84c9809a6204ff48}\label{class_circle_a89440566d7fa8f7b84c9809a6204ff48} 
+void {\bfseries setO} (\mbox{\hyperlink{class_point}{Point}} new\+Center)
+\item 
+\Hypertarget{class_circle_a0cfe146a5cfaeb869f3a7976c0a3cb80}\label{class_circle_a0cfe146a5cfaeb869f3a7976c0a3cb80} 
+void {\bfseries setR} (double newR)
+\item 
+void \mbox{\hyperlink{class_circle_aed8b55a5b19836bc67a5260cc90bdb72}{shift}} (double dx, double dy) override
+\begin{DoxyCompactList}\small\item\em Applies a shift to the figure by dx and dy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_circle_ab8470ba075efcfb709323ecc16209124}{print\+Info}} () const override
+\begin{DoxyCompactList}\small\item\em Prints information about the figure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_figure}{Figure}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Figure} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic destruction. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PrI$>$ }\\void \mbox{\hyperlink{class_figure_a0b826d5c11ab53190611e17fe3f5a381}{print\+Figure\+Info}} (const PrI \&figure)
+\begin{DoxyCompactList}\small\item\em Prints figure info using CRTP-\/like templated method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_circle_abcbbecda2c503d74ecd69d2b17c8ab40}{area}} (const \mbox{\hyperlink{class_circle}{Circle}} \&CL)
+\begin{DoxyCompactList}\small\item\em Calculates the area of the given circle. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_circle_a544e38da9adc029863c1fe4c6e98077d}{perimeter}} (const \mbox{\hyperlink{class_circle}{Circle}} \&CL)
+\begin{DoxyCompactList}\small\item\em Calculates the perimeter (circumference) of the given circle. \end{DoxyCompactList}\item 
+\Hypertarget{class_circle_a6e866004cfcab325c277948198423ffa}\label{class_circle_a6e866004cfcab325c277948198423ffa} 
+static \mbox{\hyperlink{class_circle}{Circle}} {\bfseries GEN} ()
+\begin{DoxyCompactList}\small\item\em Generates a circle with random center and radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a circle defined by its center and radius. 
+
+\label{doc-constructors}
+\Hypertarget{class_circle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac}\index{Circle@{Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{Circle()}{Circle()}}
+{\footnotesize\ttfamily \label{class_circle_af1bc3eac5e4dafe4e9783cb2e92aa8ac} 
+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{cent}{, }\item[{double}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a circle with given center and radius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cent} & Center point. \\
+\hline
+{\em r} & Radius of the circle. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_circle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_circle_abcbbecda2c503d74ecd69d2b17c8ab40}\index{Circle@{Circle}!area@{area}}
+\index{area@{area}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily \label{class_circle_abcbbecda2c503d74ecd69d2b17c8ab40} 
+double Circle\+::area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_circle}{Circle}} \&}]{CL}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the area of the given circle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CL} & \doxylink{class_circle}{Circle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Area of the circle. 
+\end{DoxyReturn}
+\Hypertarget{class_circle_a544e38da9adc029863c1fe4c6e98077d}\index{Circle@{Circle}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{perimeter()}{perimeter()}}
+{\footnotesize\ttfamily \label{class_circle_a544e38da9adc029863c1fe4c6e98077d} 
+double Circle\+::perimeter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_circle}{Circle}} \&}]{CL}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the perimeter (circumference) of the given circle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CL} & \doxylink{class_circle}{Circle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Circumference of the circle. 
+\end{DoxyReturn}
+\Hypertarget{class_circle_ab8470ba075efcfb709323ecc16209124}\index{Circle@{Circle}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{class_circle_ab8470ba075efcfb709323ecc16209124} 
+void Circle\+::print\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints information about the figure. 
+
+Must be implemented by derived classes. 
+
+Implements \mbox{\hyperlink{class_figure_a605696a6d49001d966516839e9691ba1}{Figure}}.
+
+\Hypertarget{class_circle_aed8b55a5b19836bc67a5260cc90bdb72}\index{Circle@{Circle}!shift@{shift}}
+\index{shift@{shift}!Circle@{Circle}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_circle_aed8b55a5b19836bc67a5260cc90bdb72} 
+void Circle\+::shift (\begin{DoxyParamCaption}\item[{double}]{dx}{, }\item[{double}]{dy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies a shift to the figure by dx and dy. 
+
+Must be implemented by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Shift along X axis. \\
+\hline
+{\em dy} & Shift along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_figure_a9f135622fc42ccb6d82a52bc812b4c41}{Figure}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+circle.\+hpp\item 
+circle.\+cpp\end{DoxyCompactItemize}

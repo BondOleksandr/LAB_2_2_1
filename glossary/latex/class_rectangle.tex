@@ -1,0 +1,200 @@
+\doxysection{Rectangle Class Reference}
+\hypertarget{class_rectangle}{}\label{class_rectangle}\index{Rectangle@{Rectangle}}
+
+
+Represents a quadrilateral with four points, assumed to form a rectangle.  
+
+
+
+
+{\ttfamily \#include $<$rectangle.\+hpp$>$}
+
+Inheritance diagram for Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rectangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rectangle_aea70aa224eca64db573afb40bc21ab88}{Rectangle}} (const \mbox{\hyperlink{class_point}{Point}} \&a, const \mbox{\hyperlink{class_point}{Point}} \&b, const \mbox{\hyperlink{class_point}{Point}} \&c, const \mbox{\hyperlink{class_point}{Point}} \&d)
+\begin{DoxyCompactList}\small\item\em Constructs a rectangle from four given points. \end{DoxyCompactList}\item 
+\Hypertarget{class_rectangle_add8ae64f8f3ff98853e81e581c82bc68}\label{class_rectangle_add8ae64f8f3ff98853e81e581c82bc68} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getA} () const
+\item 
+\Hypertarget{class_rectangle_a9abe7be7c2ff7169bb56600b4fe6441e}\label{class_rectangle_a9abe7be7c2ff7169bb56600b4fe6441e} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getB} () const
+\item 
+\Hypertarget{class_rectangle_a0f9eb7586789f0321812b045a29c443f}\label{class_rectangle_a0f9eb7586789f0321812b045a29c443f} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getC} () const
+\item 
+\Hypertarget{class_rectangle_a16ee1582b425ee9a5673deb3a76dd976}\label{class_rectangle_a16ee1582b425ee9a5673deb3a76dd976} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries getD} () const
+\item 
+\Hypertarget{class_rectangle_a911159c537e74624b0a3cc0fdf64ba4f}\label{class_rectangle_a911159c537e74624b0a3cc0fdf64ba4f} 
+void {\bfseries setA} (const \mbox{\hyperlink{class_point}{Point}} \&newA)
+\item 
+\Hypertarget{class_rectangle_a8f6bd1f57355e58fc2aa5dcf5f400a7d}\label{class_rectangle_a8f6bd1f57355e58fc2aa5dcf5f400a7d} 
+void {\bfseries setB} (const \mbox{\hyperlink{class_point}{Point}} \&newB)
+\item 
+\Hypertarget{class_rectangle_a078bdb5f4ce0779902be1f874f55e9f3}\label{class_rectangle_a078bdb5f4ce0779902be1f874f55e9f3} 
+void {\bfseries setC} (const \mbox{\hyperlink{class_point}{Point}} \&newC)
+\item 
+\Hypertarget{class_rectangle_acfa3755f503b960b84b405dd57bf91fd}\label{class_rectangle_acfa3755f503b960b84b405dd57bf91fd} 
+void {\bfseries setD} (const \mbox{\hyperlink{class_point}{Point}} \&newD)
+\item 
+void \mbox{\hyperlink{class_rectangle_afa6bd15c741c1f4f9ff650aeb02d1c1a}{print\+Info}} () const override
+\begin{DoxyCompactList}\small\item\em Prints information about the figure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rectangle_ac44ddad8a78674fb144d48ab35729895}{shift}} (double dx, double dy) override
+\begin{DoxyCompactList}\small\item\em Applies a shift to all four points of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_figure}{Figure}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Figure} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic destruction. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PrI$>$ }\\void \mbox{\hyperlink{class_figure_a0b826d5c11ab53190611e17fe3f5a381}{print\+Figure\+Info}} (const PrI \&figure)
+\begin{DoxyCompactList}\small\item\em Prints figure info using CRTP-\/like templated method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a44c68a57e19acf06c0f0671c392bdb5f}\label{class_rectangle_a44c68a57e19acf06c0f0671c392bdb5f} 
+static \mbox{\hyperlink{class_rectangle}{Rectangle}} {\bfseries GEN} ()
+\begin{DoxyCompactList}\small\item\em Generates a random rectangle. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_rectangle_aade8381375844c015942c5545296ce77}{isconvex}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&ABCD)
+\begin{DoxyCompactList}\small\item\em Checks if the given rectangle is convex. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_rectangle_a2a95cb439ed740f2ae189d240bbe6740}{perimeter}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&ABCD)
+\begin{DoxyCompactList}\small\item\em Calculates the perimeter of the rectangle. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{class_rectangle_a87c9246ac5a6de98f7d149821ec27d1e}{area}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&ABCD)
+\begin{DoxyCompactList}\small\item\em Calculates the area of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a quadrilateral with four points, assumed to form a rectangle. 
+
+\label{doc-constructors}
+\Hypertarget{class_rectangle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_rectangle_aea70aa224eca64db573afb40bc21ab88}\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}}
+{\footnotesize\ttfamily \label{class_rectangle_aea70aa224eca64db573afb40bc21ab88} 
+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{a}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{b}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{c}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a rectangle from four given points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First vertex. \\
+\hline
+{\em b} & Second vertex. \\
+\hline
+{\em c} & Third vertex. \\
+\hline
+{\em d} & Fourth vertex. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_rectangle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_rectangle_a87c9246ac5a6de98f7d149821ec27d1e}\index{Rectangle@{Rectangle}!area@{area}}
+\index{area@{area}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{area()}{area()}}
+{\footnotesize\ttfamily \label{class_rectangle_a87c9246ac5a6de98f7d149821ec27d1e} 
+double Rectangle\+::area (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{ABCD}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the area of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABCD} & \doxylink{class_rectangle}{Rectangle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Area of the rectangle. 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_aade8381375844c015942c5545296ce77}\index{Rectangle@{Rectangle}!isconvex@{isconvex}}
+\index{isconvex@{isconvex}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{isconvex()}{isconvex()}}
+{\footnotesize\ttfamily \label{class_rectangle_aade8381375844c015942c5545296ce77} 
+bool Rectangle\+::isconvex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{ABCD}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks if the given rectangle is convex. 
+
+Convexity implies all internal angles are less than 180 degrees.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABCD} & \doxylink{class_rectangle}{Rectangle} to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if convex, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a2a95cb439ed740f2ae189d240bbe6740}\index{Rectangle@{Rectangle}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{perimeter()}{perimeter()}}
+{\footnotesize\ttfamily \label{class_rectangle_a2a95cb439ed740f2ae189d240bbe6740} 
+double Rectangle\+::perimeter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{ABCD}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the perimeter of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ABCD} & \doxylink{class_rectangle}{Rectangle} to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Perimeter of the rectangle. 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_afa6bd15c741c1f4f9ff650aeb02d1c1a}\index{Rectangle@{Rectangle}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{class_rectangle_afa6bd15c741c1f4f9ff650aeb02d1c1a} 
+void Rectangle\+::print\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prints information about the figure. 
+
+Must be implemented by derived classes. 
+
+Implements \mbox{\hyperlink{class_figure_a605696a6d49001d966516839e9691ba1}{Figure}}.
+
+\Hypertarget{class_rectangle_ac44ddad8a78674fb144d48ab35729895}\index{Rectangle@{Rectangle}!shift@{shift}}
+\index{shift@{shift}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_rectangle_ac44ddad8a78674fb144d48ab35729895} 
+void Rectangle\+::shift (\begin{DoxyParamCaption}\item[{double}]{dx}{, }\item[{double}]{dy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Applies a shift to all four points of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Shift along X axis. \\
+\hline
+{\em dy} & Shift along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_figure_a9f135622fc42ccb6d82a52bc812b4c41}{Figure}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rectangle.\+hpp\item 
+rectangle.\+cpp\end{DoxyCompactItemize}

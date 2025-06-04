@@ -1,0 +1,103 @@
+\doxysection{Figure Class Reference}
+\hypertarget{class_figure}{}\label{class_figure}\index{Figure@{Figure}}
+
+
+Abstract base class for geometric figures.  
+
+
+
+
+{\ttfamily \#include $<$figure.\+hpp$>$}
+
+Inheritance diagram for Figure\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_figure}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_figure_a605696a6d49001d966516839e9691ba1}{print\+Info}} () const =0
+\begin{DoxyCompactList}\small\item\em Prints information about the figure. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_figure_a9f135622fc42ccb6d82a52bc812b4c41}{shift}} (double dx, double dy)=0
+\begin{DoxyCompactList}\small\item\em Applies a shift to the figure by dx and dy. \end{DoxyCompactList}\item 
+\Hypertarget{class_figure_a7d1d880545c2a5a8ccde709903aa783c}\label{class_figure_a7d1d880545c2a5a8ccde709903aa783c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Figure} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for safe polymorphic destruction. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PrI$>$ }\\void \mbox{\hyperlink{class_figure_a0b826d5c11ab53190611e17fe3f5a381}{print\+Figure\+Info}} (const PrI \&figure)
+\begin{DoxyCompactList}\small\item\em Prints figure info using CRTP-\/like templated method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for geometric figures. 
+
+\label{doc-func-members}
+\Hypertarget{class_figure_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_figure_a0b826d5c11ab53190611e17fe3f5a381}\index{Figure@{Figure}!printFigureInfo@{printFigureInfo}}
+\index{printFigureInfo@{printFigureInfo}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{printFigureInfo()}{printFigureInfo()}}
+{\footnotesize\ttfamily \label{class_figure_a0b826d5c11ab53190611e17fe3f5a381} 
+template$<$typename PrI$>$ \\
+void Figure\+::print\+Figure\+Info (\begin{DoxyParamCaption}\item[{const PrI \&}]{figure}{}\end{DoxyParamCaption})}
+
+
+
+Prints figure info using CRTP-\/like templated method. 
+
+Useful for templated base class to call derived methods without RTTI.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em PrI} & Type that implements \doxylink{class_figure_a605696a6d49001d966516839e9691ba1}{print\+Info()}. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em figure} & Object of type PrI. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_figure_a605696a6d49001d966516839e9691ba1}\index{Figure@{Figure}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily \label{class_figure_a605696a6d49001d966516839e9691ba1} 
+virtual void Figure\+::print\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prints information about the figure. 
+
+Must be implemented by derived classes. 
+
+Implemented in \mbox{\hyperlink{class_circle_ab8470ba075efcfb709323ecc16209124}{Circle}}, \mbox{\hyperlink{class_rectangle_afa6bd15c741c1f4f9ff650aeb02d1c1a}{Rectangle}}, and \mbox{\hyperlink{class_triangle_aa395ac08f04e6f7f2b8afed1f4e7b8cb}{Triangle}}.
+
+\Hypertarget{class_figure_a9f135622fc42ccb6d82a52bc812b4c41}\index{Figure@{Figure}!shift@{shift}}
+\index{shift@{shift}!Figure@{Figure}}
+\doxysubsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \label{class_figure_a9f135622fc42ccb6d82a52bc812b4c41} 
+virtual void Figure\+::shift (\begin{DoxyParamCaption}\item[{double}]{dx}{, }\item[{double}]{dy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Applies a shift to the figure by dx and dy. 
+
+Must be implemented by derived classes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Shift along X axis. \\
+\hline
+{\em dy} & Shift along Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_circle_aed8b55a5b19836bc67a5260cc90bdb72}{Circle}}, \mbox{\hyperlink{class_rectangle_ac44ddad8a78674fb144d48ab35729895}{Rectangle}}, and \mbox{\hyperlink{class_triangle_a21cb3c6989413f6ad4fdba6a91d8ac4e}{Triangle}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+figure.\+hpp\item 
+figure.\+cpp\end{DoxyCompactItemize}
